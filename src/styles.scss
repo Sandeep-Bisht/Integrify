@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "./assets/style/theme.scss";
+@import "./assets/style/typography.scss";
+@import "./assets/style/button.scss";
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
