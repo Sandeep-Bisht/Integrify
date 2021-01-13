@@ -1,0 +1,217 @@
+
+.banner{
+    background: transparent linear-gradient(118deg, #FFFFFF 0%, #D5E3FA 100%) 0% 0% no-repeat;
+
+    .banner-inner{
+        background: url('../../assets/images/wave.svg') left bottom no-repeat;
+        background-size: contain;
+    }
+    .banner-info{
+        h1{
+            line-height: 1.3;
+        }
+        p{
+            line-height: 1.9;
+        }
+    }
+}
+
+
+.heading-top-text{
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 5px;
+        background: var(--bg-blue-1);
+        top:-46px;
+        left: 0;
+
+    }
+}
+
+.heading-bottom-text{
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 5px;
+        background: var(--blue-1);
+        bottom:-30px;
+        left: 50%;
+        margin-left: -50px;
+    }
+    &.text-white{
+        &::after{
+            background: var(--white);
+        }
+        
+    }
+}
+
+.customers-sec{
+   background:#d6e3f8;
+}
+
+.elementor-image{
+    max-width: 60%;
+    border-radius: 50px;
+}
+
+
+
+.services{
+    background: transparent linear-gradient(180deg, #333333 0%, #4B81D6 100%) 0% 0% no-repeat;
+
+    .services-col{
+        &:hover{
+            box-shadow: 0 0.1rem .7rem rgba(0, 0, 0, 0.20);
+            border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        p{
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+}
+
+
+.ghost-card{
+    .ghost-icon{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border:2px solid var(--blue-1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color:var(--blue-1);
+        transition: all 0.4s ease-out;
+        &:hover{
+            color:var(--white);
+            background: var(--blue-1);
+        }
+    }
+    p{
+        line-height: 1.8;
+    }
+}
+
+
+
+.ghost-section{
+    background: transparent linear-gradient(118deg, #333333 0%, #4B81D6 100%) 0% 0% no-repeat;
+}
+
+.social-work{
+    span{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border:2px solid var(--blue-1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 46px;
+        color:var(--blue-1);
+        transition: all 0.4s ease-out;
+        margin: 0 auto 25px;
+        &:hover{
+            color:var(--white);
+            background: var(--blue-1);
+        }
+        
+    }
+}
+
+
+
+/* accordion styles */
+.accordion {
+	.card-header {
+        cursor: pointer;
+        border:0;
+        border:3px;
+
+        &:first-child{
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px);
+        }
+
+        .card-title{
+            text-decoration: none;
+            font-size: 20px;
+        }
+	}
+
+	&.indicator-plus-before {
+		&.round-indicator {
+			.card-header {
+				&:before {
+					font-family: 'FontAwesome';  
+					font-size: 14px;
+                    content:"\f068";
+                    margin-right: 10px;
+                    margin-top: 4px;
+                    color:var(--blue-1);
+				}
+				&.collapsed {
+					&:before {
+                        content:"\f067";
+					}
+				}
+			}			
+		}
+		.card-header {
+			&:before {
+				font-family: 'FontAwesome';  
+				content: "\f068";
+				float: left; 
+			}
+			&.collapsed {
+				&:before {
+					content: "\f067"; 
+				}
+			}
+		}
+	}	
+	
+	&.indicator-chevron {
+		.card-header {
+			&:after {
+				font-family: 'FontAwesome';  
+				content: "\f078";
+				float: right; 
+			}
+			&.collapsed {
+				&:after {
+					content: "\f077"; 
+				}
+			}
+		}
+	}	
+	
+	&.background-none {
+		[class^="card"] {
+			background: transparent;
+		}
+	}
+	
+	&.border-0 {
+		.card {
+			border: 0;
+		}	
+    } 
+    .card-body{
+        line-height: 1.7;
+    }
+}

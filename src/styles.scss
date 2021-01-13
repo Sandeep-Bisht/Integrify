@@ -4,9 +4,18 @@
 @import "./assets/style/theme.scss";
 @import "./assets/style/typography.scss";
 @import "./assets/style/button.scss";
+@import "./assets/style/form.scss";
 
 
 body{
     font-family: 'Open Sans', sans-serif;
 }
 
+
+.text-primary{
+    color: var(--blue-1) !important;
+}
+
+.bg-primary{
+    background: var(--bg-blue-1);
+}
