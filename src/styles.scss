@@ -11,11 +11,17 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-
+a{
+    color:var(--blue-1);
+}
 .text-primary{
     color: var(--blue-1) !important;
 }
 
 .bg-primary{
-    background: var(--bg-blue-1);
+    background: var(--bg-blue-1) !important;
+}
+
+.list-type-num{
+    list-style-type: decimal;
 }

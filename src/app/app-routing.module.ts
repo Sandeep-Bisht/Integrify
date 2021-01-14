@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PricesComponent } from './prices/prices.component';
-import { BlogComponent } from './blog/blog.component';
 import { AuthorComponent } from './author/author.component';
 import { InquireComponent } from './inquire/inquire.component';
 import { GhostwritingComponent } from './ghostwriting/ghostwriting.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch : 'full'},
   { path: 'prices', component: PricesComponent, pathMatch : 'full'},
-  { path: 'blog', component: BlogComponent, pathMatch : 'full'},
   { path: 'author', component: AuthorComponent, pathMatch : 'full'},
   { path: 'inquire', component: InquireComponent, pathMatch : 'full'},
   { path: 'ghostwriting', component: GhostwritingComponent, pathMatch : 'full'},

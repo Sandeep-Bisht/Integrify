@@ -150,6 +150,7 @@
         .card-title{
             text-decoration: none;
             font-size: 20px;
+            color:var(--blue-1);
         }
 	}
 
@@ -214,4 +215,12 @@
     .card-body{
         line-height: 1.7;
     }
+}
+
+.frequently-section{
+    background: transparent linear-gradient(145deg, #4B81D6, #333333 100%) 0% 0% no-repeat;
+}
+
+.inquire-section{
+    background: transparent linear-gradient(145deg, #333333, #4B81D6 100%) 0% 0% no-repeat;
 }

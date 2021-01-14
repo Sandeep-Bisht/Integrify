@@ -27,6 +27,18 @@ h6{
 }
 
 
+@media(max-width:767px){
+
+    h1{
+        font-size: 32px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+}
+
+
 .fontweight-light{
     font-weight: 300;
 }

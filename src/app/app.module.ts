@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PricesComponent } from './prices/prices.component';
-import { BlogComponent } from './blog/blog.component';
 import { AuthorComponent } from './author/author.component';
 import { InquireComponent } from './inquire/inquire.component';
 import { GhostwritingComponent } from './ghostwriting/ghostwriting.component';
@@ -38,8 +37,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
     LektoratComponent,
     ImprintComponent,
     CondationsComponent,
-    PrivacyComponent,
-    BlogComponent
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

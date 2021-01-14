@@ -5,7 +5,7 @@
             font-size: 14px;
             color:var(--gray-1);
         }
-        .form-control-lg{
+        .form-control{
             font-size: 16px;
             color:var(--gray-1);
             &:focus{
@@ -17,4 +17,8 @@
 
 .inputnumber-width{
     width: 100px;
+}
+
+.controlfile{
+    font-size: 14px;
 }
