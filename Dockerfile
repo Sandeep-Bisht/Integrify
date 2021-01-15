@@ -21,5 +21,8 @@ FROM nginx:alpine
 
 RUN rm /usr/share/nginx/html/*
 
+WORKDIR /etc/nginx/conf.d
+COPY --from=node /app/client_app/default.conf default.conf
+
 WORKDIR /usr/share/nginx/html
 COPY --from=node /app/client_app/dist/. .
