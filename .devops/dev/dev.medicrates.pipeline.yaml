@@ -1,0 +1,27 @@
+
+trigger:
+  branches:
+   include:
+     - dev  
+
+resources:
+  repositories:
+  - repository: self
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: Docker@2
+  displayName: 'Build & Push Image'
+  inputs:
+    command: 'buildAndPush'
+    containerRegistry: 'itblue'
+    Dockerfile: 'Dockerfile'
+    buildContext: .
+    repository: medicrates-dev/medicrates
+    tags: |
+      $(Build.BuildId)
+      latest
+      $(Build.SourceVersion)
