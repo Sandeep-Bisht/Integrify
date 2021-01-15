@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // tslint:disable-next-line:typedef
     $(document).ready(function(){
 
       $(window).scroll(function(){
