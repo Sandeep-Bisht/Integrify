@@ -7,8 +7,10 @@ import { Config } from './config';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
-    constructor(private readonly config: Config) {}
+    constructor(
+        private readonly config: Config
+    ) {
+    }
 
     public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return this.invokeInternal(req, next, true);

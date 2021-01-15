@@ -2,8 +2,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,10 +19,9 @@ import { LektoratComponent } from './lektorat/lektorat.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { Config, DefaultConfig } from 'src/app/services/config';
 
-import {Config, DefaultConfig } from './services/config';
-import { AuthInterceptor } from './services/auth.interceptor';
-
+import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,10 +44,11 @@ import { AuthInterceptor } from './services/auth.interceptor';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    { provide: Config , useValue: DefaultConfig },
+    { provide: Config, useValue: DefaultConfig },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

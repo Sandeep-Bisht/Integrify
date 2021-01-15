@@ -23,8 +23,8 @@ export class Config {
 }
 
 export const DefaultConfig = new Config(
-    'https://cloud.squidex.io',
-    'sample-blog',
-    'sample-blog:blog',
-    'ZxmQGgouOUmyVU4fh38QOCqKja3IH1vPu1dUx40KDec='
+    'https://squidex.it-blue.net',
+    'medicrates',
+    'medicrates:default',
+    'xzppaoys080oor2vcyachz1nvqvsmzn5pflh9lirbagx'
 );
