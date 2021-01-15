@@ -73,4 +73,21 @@ footer{
     .secondary-footer{
         background-color: var(--bg-black-3);
     }
+
+
+    .scroll-btn{
+        display:block;
+        width: 40px;
+        height: 40px;
+        line-height: 36px;
+        background: rgba(146, 146, 146, .8);
+        border-radius: 4px;
+        position: fixed;
+        right: 20px;
+        bottom: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 12px;
+        display: none;
+    }
 }

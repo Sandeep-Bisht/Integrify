@@ -1,0 +1,26 @@
+
+
+a{
+    color:var(--bg-black-2)
+}
+
+p{
+    font: 14px;
+}
+
+.normal-list{
+    li{
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+.desmil-list{
+ list-style-type: lower-roman;
+
+ li{
+     padding-left: 15px;
+     font-size: 14px;
+     line-height: 1.8;
+ }
+}
