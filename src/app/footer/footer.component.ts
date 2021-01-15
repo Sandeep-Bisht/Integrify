@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +11,24 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    $(document).ready(function(){
+
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 100) {
+              $('#scrollToTop').fadeIn();
+          } else {
+              $('#scrollToTop').fadeOut();
+          }
+      });
+
+      // tslint:disable-next-line:typedef
+      $('#scrollToTop').click(function(){
+          $('html, body').animate({scrollTop : 0}, 800);
+          return false;
+      });
+  });
+
   }
 
 }

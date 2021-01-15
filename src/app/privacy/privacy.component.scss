@@ -1,15 +1,21 @@
 
-.pc-row{
-    p,
-    ul{
-        font-size: 14px;
-    }
+ p,
+ ul{
+     font-size: 14px;
+ }
 
-    p{
-        line-height: 1.8;
-    }
+ p{
+     line-height: 1.8;
+ }
 
-    a{
-        color:var(--bg-black-2)
-    }
-}
+ a{
+     color:var(--bg-black-2);
+ }
+
+ .normal-list{
+     li{
+         font-size: 14px;
+         line-height: 1.8;
+         margin-bottom: 10px;
+     }
+ }
