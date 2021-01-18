@@ -46,40 +46,42 @@
         <div class="col-12">
             <h4 class="fontweight-bold mb-4">Kontaktformular</h4>
 
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="customeform-section">
-                
+            
+            
+            <form class="customeform-section" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
                 <div class="form-group">
                     <label>Vorname (Pflichtfeld)</label>
-                    <input type="text" formControlName="firstName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                        <div *ngIf="f.firstName.errors.required">Fild is required</div>
+                    <input type="text" name="firstName" class="form-control form-control-lg" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required>
+                    <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                        <div *ngIf="firstName.errors.required">Fild is required</div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label>Nachname (Pflichtfeld)</label>
-                    <input type="text" formControlName="lastName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                        <div *ngIf="f.lastName.errors.required">Fild is required</div>
+                    <input type="text" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
+                    <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                        <div *ngIf="lastName.errors.required">Fild is required</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>E-Mail-Adresse (Pflichtfeld)</label>
-                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                        <div *ngIf="f.email.errors.required">Email is required</div>
-                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    <input type="text" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                        <div *ngIf="email.errors.required">Email is required</div>
+                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Telefonnummer (Pflichtfeld)</label>
-                    <input type="text" formControlName="phone" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
-                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                        <div *ngIf="f.phone.errors.required">Fild is required</div>
+                    <input type="text" name="phone" class="form-control" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
+                    <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                        <div *ngIf="phone.errors.required">Fild is required</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Qualifikation (Pflichtfeld)</label>
-                    <select formControlName="qualification" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" class="form-control form-control-lg">
+                    <select name="qualification" class="form-control" [(ngModel)]="model.qualification" #qualification="ngModel" [ngClass]="{ 'is-invalid': f.submitted && qualification.invalid }" required class="form-control form-control-lg">
                       <option>---</option>
                       <option>Student</option>
                       <option>Bachelor</option>
@@ -89,39 +91,34 @@
                       <option>Promotion</option>
                       <option>Andere</option>
                     </select>
-                    <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
-                        <div *ngIf="f.qualification.errors.required">Fild is required</div>
+                    <div *ngIf="f.submitted && qualification.invalid" class="invalid-feedback">
+                        <div *ngIf="qualification.errors.required">Fild is required</div>
                     </div>
                    
                 </div>
 
                 <div class="form-group">
                     <label>In welchen Sprachen können Sie wissenschaftliche Arbeiten verfassen?</label>
-                    <input type="text" formControlName="language" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.language.errors }" />
-                    <div *ngIf="submitted && f.language.errors" class="invalid-feedback">
-                        <div *ngIf="f.language.errors.required">Fild is required</div>
-                    </div>
+                    <input type="text" name="language" class="form-control" [(ngModel)]="model.language" #language="ngModel" [ngClass]="{ 'is-invalid': f.submitted && language.invalid }">
                 </div>
 
                 <div class="form-group">
                   <label>Thema der Arbeit und weitere Informationen - umso präziser Ihre Informationen, desto besser können wir Ihnen ein Angebot unterbreiten! (Pflichtfeld)</label>
-                  <textarea formControlName="subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" rows="6"></textarea>
-                  <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
-                    <div *ngIf="f.subject.errors.required">Fild is required</div>
-                </div>
+                  <textarea rows="6" name="subject" class="form-control" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required></textarea>
+                    <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
+                        <div *ngIf="subject.errors.required">Fild is required</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label>Weitere Informationen</label>
-                    <input type="text" formControlName="information" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.information.errors }" />
-                    <div *ngIf="submitted && f.information.errors" class="invalid-feedback">
-                        <div *ngIf="f.information.errors.required">Fild is required</div>
-                    </div>
+                    <input type="text" name="information" class="form-control" [(ngModel)]="model.information" #information="ngModel" [ngClass]="{ 'is-invalid': f.submitted && information.invalid }">
+                    
                 </div>
 
                 
                 <div class="pt-3">
-                    <button type="submit" class="btn btn-primary text-uppercase">senden</button>
+                    <button class="btn btn-primary text-uppercase">senden</button>
                 </div>
                 
             </form>

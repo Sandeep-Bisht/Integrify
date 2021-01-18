@@ -8,46 +8,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthorComponent implements OnInit {
 
-    contactForm: FormGroup;
-    submitted = false;
+  model: any = {};
+  form: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-
-    this.contactForm = this.formBuilder.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        phone: ['', Validators.required],
-        qualification: ['', Validators.required],
-        language: ['', Validators.required],
-        subject: ['', Validators.required],
-        information: ['', Validators.required],
-    });
 
   }
 
 
-  get f() { return this.contactForm.controls; }
+  // tslint:disable-next-line:typedef
+  onSubmit(form: any) {
 
-    // tslint:disable-next-line:typedef
-    onSubmit() {
-        this.submitted = true;
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
 
-        // stop here if form is invalid
-        if (this.contactForm.invalid) {
-            return;
-        }
+    setTimeout(() => { 
+     form.reset();
+    }, 3000);
+  }
 
-        // display form values on success
-        console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value, null, 4));
-    }
-
-    // tslint:disable-next-line:typedef
-    onReset() {
-        this.submitted = false;
-        this.contactForm.reset();
-    }
 
 }
