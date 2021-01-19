@@ -9,6 +9,7 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    counter-reset: my-sec-counter;
 }
 
 a{

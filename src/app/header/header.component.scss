@@ -2,7 +2,6 @@
 .navbar-brand{
     max-width: 125px;
     display: inline-block;
-
     &:hover{
         opacity: .6;
     }
@@ -10,7 +9,7 @@
 
 .navbar-light{
     background: var(--bg-white);
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px var(--black-3);
     position: relative;
     z-index: 20;
     
@@ -30,6 +29,11 @@
         .nav-link{
             padding-left: .8rem;
             padding-right: .8rem;
+            color: var(--gray-1);
+
+            &.active{
+                color: var(--blue-1);
+            }
         }
     }
 }
@@ -42,10 +46,17 @@
 
     .dropdown-item{
         padding: .48rem 1.2rem;
-        border-bottom: 1px solid var(--gray-4);
-        &.active, &:focus{
-            background-color: var(--gray-4);
-            color:var(--bg-black-2);
+        border-bottom: 1px solid var(--gray-2);
+        color:var(--black-2);
+        background-color: var(--white-1);
+        
+        &:hover{
+            background-color: var(--gray-2);
+        }
+
+        &.active{
+            color: var(--blue-1);
+            background-color: var(--gray-2);
         }
     }
 }
@@ -56,12 +67,12 @@
         top:67px;
         left: 0;
         width: 100%;
-        background: var(--gray-4);
+        background: var(--white-1);
     }
 
     .navbar-nav{
         .nav-link{
-           border-bottom:1px solid var(--gray-5);
+           border-bottom:1px solid var(--gray-2);
            padding: 12px 20px;
         }
     }
@@ -72,7 +83,7 @@
     
         .dropdown-item{
             padding: 12px 1.2rem;
-            border-bottom: 1px solid var(--gray-4);
+            border-bottom: 1px solid var(--gray-2);
         }
     }
     

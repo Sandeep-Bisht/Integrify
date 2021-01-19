@@ -36,3 +36,23 @@
         line-height: 0;
     }
 }
+
+
+
+.des-btn{
+    min-width: 200px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 25px;
+    color:var(--blue-1);
+    border-radius: 8px;
+}
+
+.des-white-btn{
+    background-color: var(--white);
+
+    &:hover{
+        background-color: var(--blue-1);
+        color:var(--white);
+    }
+}

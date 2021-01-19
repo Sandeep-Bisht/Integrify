@@ -1,7 +1,7 @@
 <div *ngIf="loading">
-    <section class="banner pt-5">
+    <section class="banner pt-5 mb-5">
         <div class="banner-inner">
-          <div class="container">
+          <div class="container plusicon">
             <div class="row">
               <div class="col-lg-6 align-self-center pb-lg-5">
                 <div class="banner-info">
@@ -17,7 +17,7 @@
       
                   <a href="#" class="btn btn-primary"
                     >{{ homeContent?.banner?.en[0].bannerBtnTitle }}
-                    <span class="btnairro">&#x2192;</span></a
+                  </a
                   >
                 </div>
               </div>
@@ -36,13 +36,13 @@
             </div>
           </div>
         </div>
-      </section>
+    </section>
       
-      <section class="container py-5">
+      <!-- <section class="container py-5">
         <div class="row py-5">
           <div class="col-md-6">
             <div class="pt-5">
-              <h2 class="heading-top-text text-uppercase mb-4 lineheight-12">
+              <h2 class="heading-top-text text-uppercase text-primary mb-4">
                 {{ homeContent?.projectExpert?.en[0].heading }}
               </h2>
               <p class="lineheight-2">
@@ -61,9 +61,45 @@
             />
           </div>
         </div>
-      </section>
+      </section> -->
       
-      <section class="customers-sec">
+      <section class="services-section mb-4">
+        <div class="container py-5"> 
+          <h2 class="text-center text-primary mb-4">Our services</h2>
+          <div class="row pt-2">
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+              <span class="services-icon1"><img src="assets/images/content.png" alt="Content Icon"></span>
+                <h6 class="mb-3">Plagiarism check</h6>
+                <p>In order to avoid unwanted plagiarism, a plagiarism check should always be carried out. To always be</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+                <span class="services-icon2"><img src="assets/images/prooofreading.png" alt="Prooofreading Icon"></span>
+                <h6 class="mb-3">Proofreading</h6>
+                <p>The proofreading department checks your work for grammar and spelling errors. In addition</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+                <span class="services-icon3"><img src="assets/images/typing.png" alt="Typing Icon"></span>
+              <h6 class="mb-3">Translation</h6>
+                <p>We take over the translation of text passages or create texts directly in the desired foreign language.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+                <span class="services-icon4"><img src="assets/images/edit.png" alt="Edit Icon"></span>
+              <h6 class="mb-3">Editing</h6>
+                <p>Many academic texts require a specific form in terms of layout, citation style, and other factors. Our experts… </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="customers-sec">
         <div class="container py-5">
           <div class="row py-5">
             <div class="col-md-6 order-md-1 mb-4 mb-md-0">
@@ -88,9 +124,67 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       
-      <section class="container py-5">
+
+      <section class="customer-section">
+        <div class="container">
+          <h2 class="text-center text-primary mb-4 pb-2">Why us</h2>
+
+          <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+              <div class="customer-card-info pt-4">
+                <div class="title-row mb-4">Lorem ispum goes here</div>
+                <h2 class="mb-4">Your experts for every project</h2>
+                <p>
+                  Project presentations, deadlines and exam dates. Every student knows these stressors only too well. If several exams and homework are due within a few weeks, then not only does the work ethic suffer, but it can also cost nerves.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="customer-card border-shape1">
+                <img src="assets/images/customer1.png" alt="Customer Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <div class="customer-card-info pt-4">
+                <div class="title-row mb-4">Lorem ispum goes here</div>
+                <h2 class="mb-4">We understand our customers</h2>
+                <p>
+                  Who takes care of the thesis when you get sick and fail? How do you get the time to do commitments outside of university? Who can help when everything becomes too much or there is a lack of motivation? Students grapple with problems of this kind every day.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="customer-card border-shape2">
+                <img src="assets/images/customer2.png" alt="Customer Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-md-6 order-md-1">
+              <div class="customer-card-info pt-4">
+                <div class="title-row mb-4">Less stress in your studies</div>
+                <h2 class="mb-4">Your experts for every project</h2>
+                <p>
+                  Studying doesn’t have to be a stress factor. With a helping hand that takes on time-consuming work and stands by your side, you can reach your goal faster and easier. This is exactly what GhostSolutions stands for as a professional service provider for academic work. We work together with our customers to lead them to their goal - discreetly, reliably and competently.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="customer-card border-shape1">
+                <img src="assets/images/customer3.png" alt="Customer Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="container py-5">
         <div class="row py-5">
           <div class="col-md-6">
             <div class="pt-5">
@@ -113,9 +207,23 @@
             />
           </div>
         </div>
-      </section>
+      </section> -->
       
-      <section class="services py-5">
+      <section class="goals-section py-5 mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <h2 class="text-white mb-4">Full Throttle To The Goal!</h2>
+              <p class="text-white mb-0">Take advantage of the support of our ghostwriters now and benefit from our expert knowledge!</p>
+            </div>
+            <div class="col-md-6 text-center align-self-center">
+              <a href="javascript:void(0)" class="btn des-btn des-white-btn">Inquire now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="services py-5">
         <div class="container py-5">
           <h2
             class="heading-bottom-text text-uppercase lineheight-12 text-center text-white mb-5"
@@ -135,9 +243,73 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       
-      <section class="container py-5">
+
+      <section class="work-section pt-4 mb-5">
+        <div class="container">
+          <h2 class="mb-4 text-center">How it works</h2>
+
+          <ul class="workrow d-flex flex-wrap list-unstyled">
+            <li>
+              <small></small>
+              <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+            </li>
+            <li>
+              <small></small>
+              <div class="work-item-info">
+                <h5><span>Make an inquiry</span></h5>
+                <p>Make a non-binding inquiry using our inquiry form.</p>
+              </div>
+            </li>
+            
+            <li>
+              <small></small>
+              <div class="work-item-info">
+                <h5><span>Receive an offer</span></h5>
+                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p>
+              </div>
+            </li>
+            <li>
+              <small></small>
+              <div class="work-item">
+                  <span class="d-block">Hi, Bob,</span>
+                  <span class="d-block">Greeting of the day, we have recived your request for ghostwriting services</span>
+              </div>
+            </li>
+
+            <li>
+              <small></small>
+                <img src="assets/images/order.svg" alt="Order" class="img-fluid">
+            </li>
+            <li>
+              <small></small>
+              <div class="work-item-info">
+                <h5><span>Place order</span></h5>
+                <p>Are you satisfied with the offer? Then give us the final go!</p>
+              </div>
+            </li>
+
+            <li>
+              <small></small>
+              <div class="work-item-info">
+                <h5><span>Final delivery</span></h5>
+                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p>
+              </div>
+            </li>
+            <li>
+              <small></small>
+                <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+            </li>
+          </ul>
+
+         
+        </div>
+      </section>
+
+
+
+      <!-- <section class="container py-5">
         <div class="py-5">
           <h2
             class="heading-bottom-text text-uppercase lineheight-12 text-center mb-5"
@@ -167,79 +339,10 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-md-6 mb-3">
-            <div class="card ghost-card border-0">
-              <div class="row no-gutters">
-                <div class="col-md-4 col-lg-3 align-self-center">
-                  <span class="ghost-icon mx-auto mx-md-0"
-                    ><i class="fa fa-calculator"></i
-                  ></span>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <div class="card-body text-center text-md-left pl-lg-0">
-                    <h4 class="card-title text-uppercase fontweight-medium mb-3">
-                      Spezialisierung im Bereich BWL und VWL
-                    </h4>
-                    <p>
-                      Ob Marketing oder Finance: Wirtschaftsthemen sind unsere
-                      Kernkompetenz. Hier stellen wir Ihnen Experten mit langjähriger
-                      Erfahrung zur Verfügung.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="card ghost-card border-0">
-              <div class="row no-gutters">
-                <div class="col-md-4 col-lg-3 align-self-center">
-                  <span class="ghost-icon mx-auto mx-md-0"
-                    ><i class="fa fa-credit-card"></i
-                  ></span>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <div class="card-body text-center text-md-left pl-lg-0">
-                    <h4 class="card-title text-uppercase fontweight-medium mb-3">
-                      Flexible Ratenzahlung
-                    </h4>
-                    <p>
-                      Zahlen Sie ratenweise für jede Teillieferung ihrer Arbeit. Sie
-                      können zu jeder Zeit Feedback einfließen lassen um die Arbeit zu
-                      ihrer vollsten Zufriedenheit zu gestalten.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="card ghost-card border-0">
-              <div class="row no-gutters">
-                <div class="col-md-4 col-lg-3 align-self-center">
-                  <span class="ghost-icon mx-auto mx-md-0"
-                    ><i class="fa fa-address-book"></i
-                  ></span>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <div class="card-body text-center text-md-left pl-lg-0">
-                    <h4 class="card-title text-uppercase fontweight-medium mb-3">
-                      Ghostsolutions Kunden-Portal
-                    </h4>
-                    <p>
-                      Als Kunde erhalten Sie Zugang zum GhostSolutions Kunden-Portal:
-                      Laden Sie Dateien für Ihren Autor hoch und nehmen Sie
-                      Lieferungen blitzschnell in Empfang.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
-      </section>
+      </section> -->
       
-      <section class="ghost-section py-5">
+      <!-- <section class="ghost-section py-5">
         <div class="container py-4">
           <div class="row">
             <div class="col-lg-8 offset-lg-2">
@@ -258,9 +361,9 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       
-      <section class="container py-5">
+      <!-- <section class="container py-5">
         <div class="py-5">
           <h2
             class="heading-bottom-text text-uppercase lineheight-12 text-center mb-5"
@@ -278,49 +381,14 @@
               </p>
             </div>
           </div>
-          <!-- <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="social-work text-center">
-              <span><i class="fa fa-comment"></i></span>
-              <h4 class="text-uppercase fontweight-medium">2. Angebot erhalten</h4>
-              <p class="lineheight-2">
-                Sobald ihre Anfrage bei uns eingegangen ist, erhalten Sie innerhalb
-                weniger Stunden unser Angebot per E-Mail.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="social-work text-center">
-              <span><i class="fa fa-cog"></i></span>
-              <h4 class="text-uppercase fontweight-medium">3. Auftrag erteilen</h4>
-              <p class="lineheight-2">
-                Sie sind mit dem Angebot zufrieden? Dann geben Sie uns das finale Go!
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="social-work text-center">
-              <span><i class="fa fa-file-pdf-o"></i></span>
-              <h4 class="text-uppercase fontweight-medium">4. Finale Auslieferung</h4>
-              <p class="lineheight-2">
-                Erhalten Sie ihre fertige Arbeit zum vereinbarten Zeitpunkt. Dies
-                umfasst auch Express-Lieferungen innerhalb von 24 Stunden!
-              </p>
-            </div>
-          </div> -->
+         
         </div>
-      </section>
+      </section> -->
       
-      <section class="frequently-section py-5 mb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h2 class="fontweight-medium text-white">{{ homeContent?.faqHeading?.en }}</h2>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
       
-      <div class="container mb-5 pb-md-5">
+      <div class="container mb-5 pb-md-2 pt-md-5">
+        <h2 class="text-center pb-4">Frequently asked Questions</h2>
         <div class="accordion indicator-plus-before round-indicator" id="accordionH">
           <div class="card m-b-0 border-0">
             <div class="mb-4">
@@ -334,7 +402,7 @@
                 aria-expanded="false"
                 aria-controls="collapseOneH"
               >
-                <a class="card-title">Was kosten die angebotenen Dienstleistungen?</a>
+                <a class="card-title">What do the services offered cost?</a>
               </div>
               <div
                 class="collapse"
@@ -343,9 +411,7 @@
                 aria-labelledby="headingOneH"
               >
                 <div class="card-body">
-                  Unsere Preise im Ghostwriting beginnen bei 85€ pro Seite. Der
-                  Gesamtpreis kann jedoch je nach gewünschtem Qualitätsniveau,
-                  Bearbeitungsdauer und Fachrichtung von diesem Grundpreis abweichen.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
@@ -361,7 +427,7 @@
                 aria-expanded="false"
                 aria-controls="collapseTwoH"
               >
-                <a class="card-title">Wie lange dauert die Bearbeitung?</a>
+                <a class="card-title">How long does it take to process?</a>
               </div>
               <div
                 class="collapse"
@@ -370,8 +436,7 @@
                 aria-labelledby="headingTwoH"
               >
                 <div class="card-body">
-                  Das bestimmen Sie. Sie brauchen ihr akademisches Projekt in 3
-                  Monaten, 2 Wochen oder schon morgen? Wir machen´s möglich.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
@@ -388,8 +453,7 @@
                 aria-controls="collapseThreeH"
               >
                 <a class="card-title"
-                  >Wer ist mein Ansprechpartner bei Änderungswünschen oder sonstigen
-                  Anmerkungen?</a
+                  >Who is my contact person for changes or other comments?</a
                 >
               </div>
               <div
@@ -399,11 +463,7 @@
                 aria-labelledby="headingThreeH"
               >
                 <div class="card-body">
-                  Sie stehen in direktem Kontakt zu ihrem Autor, indem Sie Dokumente
-                  und Feedback in das Kundenportal hochladen können. Für alles weitere
-                  steht Ihnen gerne unser Support zur Verfügung! Hierzu wird ihnen ein
-                  persönlicher Ansprechpartner zugeteilt, der für die Abwicklung ihres
-                  Projekts zuständig ist.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
@@ -419,7 +479,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFourH"
               >
-                <a class="card-title">Kann ich in Raten zahlen? </a>
+                <a class="card-title">How do I become a GhostSolutions author?</a>
               </div>
               <div
                 class="collapse"
@@ -428,9 +488,7 @@
                 aria-labelledby="headingFourH"
               >
                 <div class="card-body">
-                  Selbstverständlich. Ihre Zahlung erfolgt grundsätzlich in Raten für
-                  jede von ihrem Autor erbrachte Teillieferung. Darüber hinaus bieten
-                  wir auch die Erstellung individueller Ratenpläne an.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
@@ -446,7 +504,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFiveH"
               >
-                <a class="card-title">Wie werde ich Autor für GhostSolutions?</a>
+                <a class="card-title">Can I deduct the service from tax?</a>
               </div>
               <div
                 class="collapse"
@@ -455,8 +513,7 @@
                 aria-labelledby="headingFiveH"
               >
                 <div class="card-body">
-                  Unser Bewerbungsformular finde Sie hier. Wir freuen uns über ihre
-                  Bewerbung!
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
@@ -473,7 +530,7 @@
                 aria-controls="collapseSixH"
               >
                 <a class="card-title">
-                  Kann ich die Dienstleistung von der Steuer absetzen?</a
+                  Can I pay anonymously?</a
                 >
               </div>
               <div
@@ -483,196 +540,14 @@
                 aria-labelledby="headingSixH"
               >
                 <div class="card-body">
-                  Studienkosten sind generell steuerlich absetzbar. Ihr Steuerberater
-                  kann Sie hierzu über ihre Möglichkeiten aufklären. In jedem Fall
-                  wird von uns eine ordnungsgemäße Rechnung erstellt, die bei Bedarf
-                  als Beleg verwendet werden kann.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                 </div>
               </div>
             </div>
       
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingSixH"
-                href="#collapseSixH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseSixH"
-              >
-                <a class="card-title"> Ist eine anonyme Zahlung möglich?</a>
-              </div>
-              <div
-                class="collapse"
-                id="collapseSixH"
-                role="tabpanel"
-                aria-labelledby="headingSixH"
-              >
-                <div class="card-body">
-                  Eine anonyme Zahlung ist zum Beispiel über ein Drittkonto von einem
-                  Freund oder einem Verwandten möglich. Unabhängig davon werden Daten
-                  von uns mit höchster Sorgfalt behandelt und nur für die notwendigen
-                  Schritte der Auftragsabwicklung verwendet.
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       
-      <section class="py-5 inquire-section mb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h2 class="fontweight-medium text-white">
-                {{ homeContent?.inquireNowHeading?.en }}
-              </h2>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <div class="container pb-5 mb-md-5">
-        <form class="customeform-section">
-          <div class="form-group">
-            <label>Anrede</label>
-            <select class="form-control form-control-lg">
-              <option>herr</option>
-              <option>frau</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Vorname (Pflichtfeld)</label>
-            <input type="text" class="form-control form-control-lg" />
-          </div>
-          <div class="form-group">
-            <label>Nachname (Pflichtfeld)</label>
-            <input type="text" class="form-control form-control-lg" />
-          </div>
-          <div class="form-group">
-            <label>E-Mail-Adresse (Pflichtfeld)</label>
-            <input type="text" class="form-control form-control-lg" />
-          </div>
-          <div class="form-group">
-            <label>Telefonnummer (Pflichtfeld)</label>
-            <input type="text" class="form-control form-control-lg" />
-          </div>
-          <div class="form-group">
-            <label>Leistungsart (Pflichtfeld)</label>
-            <select class="form-control form-control-lg">
-              <option>---</option>
-              <option>Ghostwriting</option>
-              <option>Lektorat</option>
-              <option>Korrektorat</option>
-              <option>Übersetzung</option>
-              <option>Formatierung</option>
-              <option>Plagiatsprüfung</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Akademisches Niveau (Pflichtfeld)</label>
-            <select class="form-control form-control-lg">
-              <option>---</option>
-              <option>Schularbeit</option>
-              <option>Hausarbeit</option>
-              <option>Seminararbeit</option>
-              <option>Bachelorarbeit</option>
-              <option>Masterarbeit</option>
-              <option>Diplomarbeit</option>
-              <option>Dissertation</option>
-              <option>Sonstiges</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Fachrichtung (Pflichtfeld)</label>
-            <select class="form-control form-control-lg">
-              <option>---</option>
-              <option>Wirtschaftswissenschaften</option>
-              <option>Sozialwissenschaften</option>
-              <option>Geisteswissenschaften</option>
-              <option>Sportwissenschaften</option>
-              <option>Jura</option>
-              <option>Informatik</option>
-              <option>Architektur</option>
-              <option>Naturwissenschaften</option>
-              <option>Ingenieurwissenschaften</option>
-              <option>Medizin</option>
-              <option>Mathematik</option>
-              <option>Sonstige</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Sprache</label>
-            <select class="form-control form-control-lg">
-              <option>---</option>
-              <option>Deutsch</option>
-              <option>Englisch</option>
-              <option>Sonstige</option>
-            </select>
-          </div>
-      
-          <div class="form-group">
-            <label
-              >Thema der Arbeit und weitere Informationen - umso präziser Ihre
-              Informationen, desto besser können wir Ihnen ein Angebot unterbreiten!
-              (Pflichtfeld)</label
-            >
-            <textarea class="form-control" rows="10"></textarea>
-          </div>
-      
-          <div class="form-group">
-            <label class="d-block"
-              >Thema der Arbeit und weitere Informationen - umso präziser Ihre
-              Informationen, desto besser können wir Ihnen ein Angebot unterbreiten!
-              (Pflichtfeld)</label
-            >
-            <div class="form-check form-check-inline">
-              <label class="form-check-label mr-1" for="inlineRadio1">ja</label>
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
-              />
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label mr-1" for="inlineRadio2">nein</label>
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio2"
-                value="option2"
-              />
-            </div>
-          </div>
-      
-          <div class="form-group">
-            <label>Seitenzahl (Pflichtfeld)</label>
-            <input
-              type="number"
-              class="form-control form-control-lg inputnumber-width"
-            />
-          </div>
-      
-          <div class="form-group">
-            <label>Lieferdatum (Pflichtfeld)</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              placeholder="tt.mm.jjjj"
-            />
-          </div>
-      
-          <div class="pt-3">
-            <button type="submit" class="btn btn-primary text-uppercase">
-              senden
-            </button>
-          </div>
-        </form>
-      </div>
       
 </div>

@@ -8,6 +8,8 @@ declare var $: any;
 })
 export class FooterComponent implements OnInit {
 
+  anio: number = new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit(): void {
