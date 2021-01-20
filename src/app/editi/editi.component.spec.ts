@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormattingComponent } from './formatting.component';
+import { EditiComponent } from './editi.component';
 
-describe('FormattingComponent', () => {
-  let component: FormattingComponent;
-  let fixture: ComponentFixture<FormattingComponent>;
+describe('EditiComponent', () => {
+  let component: EditiComponent;
+  let fixture: ComponentFixture<EditiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormattingComponent ]
+      declarations: [ EditiComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormattingComponent);
+    fixture = TestBed.createComponent(EditiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GhostwritingComponent } from './ghostwriting.component';
+import { PlagiarismComponent } from './plagiarism.component';
 
-describe('GhostwritingComponent', () => {
-  let component: GhostwritingComponent;
-  let fixture: ComponentFixture<GhostwritingComponent>;
+describe('PlagiarismComponent', () => {
+  let component: PlagiarismComponent;
+  let fixture: ComponentFixture<PlagiarismComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GhostwritingComponent ]
+      declarations: [ PlagiarismComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GhostwritingComponent);
+    fixture = TestBed.createComponent(PlagiarismComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

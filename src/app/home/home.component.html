@@ -23,11 +23,16 @@
               </div>
               <div class="col-lg-6">
                 <div class="pl-md-5">
-                  <img
+                  <!-- <img
                     src="{{
                       'https://squidex.it-blue.net/api/assets/medicrates/' +
                         homeContent?.banner?.en[0].bannerImage[0]
                     }}"
+                    alt="academic ghostwriters"
+                    class="img-fluid"
+                  /> -->
+                  <img
+                    src="assets/images/banner.png"
                     alt="academic ghostwriters"
                     class="img-fluid"
                   />
@@ -217,7 +222,7 @@
               <p class="text-white mb-0">Take advantage of the support of our ghostwriters now and benefit from our expert knowledge!</p>
             </div>
             <div class="col-md-6 text-center align-self-center">
-              <a href="javascript:void(0)" class="btn des-btn des-white-btn">Inquire now</a>
+              <a routerLink="/inquire" class="btn des-btn des-white-btn">Inquire now</a>
             </div>
           </div>
         </div>
@@ -248,12 +253,14 @@
 
       <section class="work-section pt-4 mb-5">
         <div class="container">
-          <h2 class="mb-4 text-center">How it works</h2>
+          <h2 class="mb-5 pb-md-4 text-center pt-md-1">How it works</h2>
 
-          <ul class="workrow d-flex flex-wrap list-unstyled">
+          <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2">
             <li>
               <small></small>
-              <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+              <div>
+                 <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+              </div>
             </li>
             <li>
               <small></small>
@@ -272,15 +279,22 @@
             </li>
             <li>
               <small></small>
-              <div class="work-item">
-                  <span class="d-block">Hi, Bob,</span>
-                  <span class="d-block">Greeting of the day, we have recived your request for ghostwriting services</span>
+              <div class="work-info info-ahape-light">
+                <div class="info-ahape1">
+                  <div class="info-ahape2">
+                    <div class="info-ahape3">
+                      <span class="d-block">Hi, Bob,</span>
+                      <span class="d-block">Greeting of the day, we have recived your request for ghostwriting services</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
 
             <li>
               <small></small>
-                <img src="assets/images/order.svg" alt="Order" class="img-fluid">
+
+              <div><img src="assets/images/order.svg" alt="Order" class="img-fluid"></div>
             </li>
             <li>
               <small></small>
@@ -298,8 +312,16 @@
               </div>
             </li>
             <li>
-              <small></small>
-                <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+              <div class="work-info info-ahape-dark">
+                <div class="info-ahape1">
+                  <div class="info-ahape2">
+                    <div class="info-ahape3">
+                      <span class="d-block">Hi, Bob,</span>
+                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
 
@@ -386,7 +408,7 @@
       </section> -->
       
  
-      
+    <section class="asked-section">
       <div class="container mb-5 pb-md-2 pt-md-5">
         <h2 class="text-center pb-4">Frequently asked Questions</h2>
         <div class="accordion indicator-plus-before round-indicator" id="accordionH">
@@ -548,6 +570,8 @@
           </div>
         </div>
       </div>
+    </section> 
+     
       
       
 </div>
