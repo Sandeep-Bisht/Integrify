@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +20,8 @@ import { EditiComponent } from './editi/editi.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { Config, DefaultConfig } from 'src/app/services/config';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
@@ -41,11 +44,13 @@ import { AuthInterceptor } from 'src/app/services/auth.interceptor';
     EditiComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [
     { provide: Config, useValue: DefaultConfig },

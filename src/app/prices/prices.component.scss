@@ -13,11 +13,40 @@ $smallDevice:767px;
     }
 }
 
-.form-check-inline{
-    .form-check-label{
-        color: var(--gray-1) !important;
+
+.price-card{
+    border:1px solid var(--gray-3);
+    background: var(--white);
+    border-radius: 5px;
+    padding: 32px 25px 35px;
+
+    .price-head{
+        span{
+            display: inline-block;
+            width: 64px;
+        }
     }
-    .form-check-input{
-        margin-right: 12px;
+    .btn-primary{
+        min-width: auto;
+        max-width: 200px;
+        width: 100%;
+    }
+    .price-body{
+        .title{
+            position: relative;
+            sub, sup{
+                font-weight: 400;
+            }
+            sub{
+                font-size: 18px;
+                color:var(--gray-1);
+            }
+            sup{
+                font-size: 18px;
+                color:var(--gray-1);
+                position: relative;
+                top: -25px;
+            }
+        }
     }
 }

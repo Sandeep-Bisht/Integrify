@@ -43,6 +43,12 @@ p{
     }
 }
 
+.first-caps{
+    text-transform: lowercase;
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
 
 .fontweight-light{
     font-weight: 300;
