@@ -321,7 +321,7 @@ $extraSmall:575px;
                         font-size: 14px;
                     }
                     .infotext{
-                        font-size: 100%;
+                        font-size: 100% !important;
                         display: inline-block;
                         position: relative;
                         margin-left: -80px;
@@ -330,17 +330,12 @@ $extraSmall:575px;
                         }
                     }
                     .num{
-                        font-size: 100%;
+                        font-size: 100% !important;
                         font-size: 140px;
                         color:rgba(51, 51, 51, .1);
                         line-height: 1;
                         font-weight: 600;
-                        // counter-increment: my-sec-counter;
-                        // content: counter(my-sec-counter);
-                        // font-size: 140px;
-                        // color:rgba(51, 51, 51, .1);
-                        // line-height: 1;
-
+                       
                         @media(max-width:$extraSmall){
                             font-size: 50px;
                         }
