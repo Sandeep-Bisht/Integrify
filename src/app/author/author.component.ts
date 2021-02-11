@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-author',
   templateUrl: './author.component.html',
@@ -10,9 +11,10 @@ export class AuthorComponent implements OnInit {
 
   model: any = {};
   form: any;
+  file;
 
+  constructor(){}
 
-  constructor() { }
 
   ngOnInit(): void {
 
@@ -24,7 +26,7 @@ export class AuthorComponent implements OnInit {
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
 
-    setTimeout(() => { 
+    setTimeout(() => {
      form.reset();
     }, 3000);
   }

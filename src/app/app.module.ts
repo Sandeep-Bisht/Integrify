@@ -25,6 +25,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { Config, DefaultConfig } from 'src/app/services/config';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
+import { ngfModule } from 'angular-file';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AuthInterceptor } from 'src/app/services/auth.interceptor';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ngfModule,
     BsDatepickerModule.forRoot(),
   ],
   providers: [

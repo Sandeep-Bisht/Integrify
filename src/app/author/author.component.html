@@ -1,127 +1,110 @@
-<section class="banner mb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center fontweight-medium text-white mb-0">Ihre Bewerbung bei GhostSolutions</h1>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="container mb-5">
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="pb-4">
-                <h4 class="fontweight-bold mb-4">Willkommen an Bord!</h4>
-                <p class="lineheight-2">Wir bei GhostSolutions freuen uns über neue Bewerbungen von kompetenten Akademikern!  Unser Team ist ständig auf der Suche nach Talenten, die den Ansprüchen des wissenschaftlichen Schreibens gerecht werden. Suchen Sie eine freiberufliche Tätigkeit als akademischer Ghostwriter, Lektor, Statistiker, Autor oder Coach? Wir vermitteln Aufträge in verschiedenen wissenschaftlichen Disziplinen und können somit auch von Ihrer Expertise profitieren!</p>
-                <p class="lineheight-2">Nutzen Sie unser Anfrageformular, um mit uns Kontakt aufzunehmen. Erzählen Sie uns von Ihren Interessensschwerpunkten und den Fachbereichen, in denen Sie tätig werden wollen.</p>
+
+<section class="container pt-5 pb-5">
+    
+    <div class="row pt-md-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="text-center pb-4">
+                <h1 class="first-caps pb-4">Become An author</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
             </div>
-            <div class="text-center">
-                <a routerlink="/home" class="btn btn-primary">Jetzt anfragen <span class="btnairro">&#x2192;</span></a>
-            </div>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="mb-4">
-                <h4 class="fontweight-bold mb-4">Diese Vorteile erwarten Sie bei uns</h4>
-                <ul class="list-type-num lineheight-2 mb-4">
-                    <li class="mb-2">
-                        <span class="fontweight-medium">Unabhängigkeit und flexible Arbeitszeiten:</span> Als freiberuflicher Ghostwriter ist es Ihnen zu 100% selbst überlassen wie, wann und wo Sie arbeiten.
-                    </li>
-                    <li class="mb-2">
-                        <span class="fontweight-medium">Überdurchschnittliche Honorare:</span> Gute Arbeit muss fair bezahlt werden. Aus dem Grund ist es uns ein wichtiges Anliegen Honorare auszuzahlen, die sich von den üblichen Honoraren in der Ghostwriter-Branche abheben.
-                    </li>
-                    <li class="mb-2"><span class="fontweight-medium">Persönliche Weiterentwicklung:</span> Setzen Sie sich mit neuen wissenschaftlichen Themen auseinander und erweitern Sie Ihre intellektuellen Fertigkeiten. Wir garantieren Ihnen, dass Sie ein hohes Maß an Abwechslung erfahren werden und somit nicht den Spaß am Lernen verlieren!</li>
-                </ul>  
-                <p class="lineheight-2">
-                    Im Rahmen unserer Zusammenarbeit steht es Ihnen frei sich für Projekte zu bewerben oder diese zu ignorieren. In jedem Fall werden Sie von uns über jedes freie Projekt benachrichtigt. So können Sie selbst bestimmen, wie hoch Ihr Arbeitspensum ausfallen soll. Mit dieser flexiblen Art der Zusammenarbeit haben wir die besten Erfahrungen gemacht.
-                </p>  
-            </div>
-           
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12">
-            <h4 class="fontweight-bold mb-4">Kontaktformular</h4>
+        <div class="col-md-8 offset-md-2">
 
-            
-            
-            <form class="customeform-section" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
-                <div class="form-group">
-                    <label>Vorname (Pflichtfeld)</label>
-                    <input type="text" name="firstName" class="form-control form-control-lg" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required>
-                    <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                        <div *ngIf="firstName.errors.required">Fild is required</div>
-                    </div>
-                </div>
+            <div class="bg-white shadow rounded px-4 py-5">
+                <h4 class="fontweight-bold mb-4">Kontaktformular</h4>
 
-                <div class="form-group">
-                    <label>Nachname (Pflichtfeld)</label>
-                    <input type="text" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
-                    <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                        <div *ngIf="lastName.errors.required">Fild is required</div>
+                <form class="customeform-section" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="text" placeholder="First name" name="firstName" class="form-control form-control-lg" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required>
+                            <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                                <div *ngIf="firstName.errors.required">Fild is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <input type="text" placeholder="Last name" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
+                          <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                              <div *ngIf="lastName.errors.required">Fild is required</div>
+                          </div>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>E-Mail-Adresse (Pflichtfeld)</label>
-                    <input type="text" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
-                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                        <div *ngIf="email.errors.required">Email is required</div>
-                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input type="email" placeholder="Email address" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" placeholder="Phone" name="phone" class="form-control" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
+                        <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                            <div *ngIf="phone.errors.required">Fild is required</div>
+                        </div>
+                      </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>Telefonnummer (Pflichtfeld)</label>
-                    <input type="text" name="phone" class="form-control" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
-                    <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
-                        <div *ngIf="phone.errors.required">Fild is required</div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <select class="form-control form-control-lg">
+                                <option >Subject area</option>
+                                <option>option1</option>
+                                <option>option2</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control form-control-lg">
+                                <option selected>Preferred language</option>
+                                <option>En</option>
+                                <option>De</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>Qualifikation (Pflichtfeld)</label>
-                    <select name="qualification" class="form-control" [(ngModel)]="model.qualification" #qualification="ngModel" [ngClass]="{ 'is-invalid': f.submitted && qualification.invalid }" required class="form-control form-control-lg">
-                      <option>---</option>
-                      <option>Student</option>
-                      <option>Bachelor</option>
-                      <option>Master</option>
-                      <option>Diplom</option>
-                      <option>Magister</option>
-                      <option>Promotion</option>
-                      <option>Andere</option>
-                    </select>
-                    <div *ngIf="f.submitted && qualification.invalid" class="invalid-feedback">
-                        <div *ngIf="qualification.errors.required">Fild is required</div>
+                
+                    <div class="form-group">
+                        <select name="qualification" class="form-control form-control-lg" [(ngModel)]="model.qualification" #qualification="ngModel" [ngClass]="{ 'is-invalid': f.submitted && qualification.invalid }" required class="form-control form-control-lg">
+                            <option>Qualification</option>
+                            <option>Student</option>
+                            <option>Bachelor</option>
+                            <option>Master</option>
+                            <option>Diplom</option>
+                            <option>Magister</option>
+                            <option>Promotion</option>
+                            <option>Andere</option>
+                            </select>
+                            <div *ngIf="f.submitted && qualification.invalid" class="invalid-feedback">
+                                <div *ngIf="qualification.errors.required">Fild is required</div>
+                            </div>
                     </div>
-                   
-                </div>
 
-                <div class="form-group">
-                    <label>In welchen Sprachen können Sie wissenschaftliche Arbeiten verfassen?</label>
-                    <input type="text" name="language" class="form-control" [(ngModel)]="model.language" #language="ngModel" [ngClass]="{ 'is-invalid': f.submitted && language.invalid }">
-                </div>
 
-                <div class="form-group">
-                  <label>Thema der Arbeit und weitere Informationen - umso präziser Ihre Informationen, desto besser können wir Ihnen ein Angebot unterbreiten! (Pflichtfeld)</label>
-                  <textarea rows="6" name="subject" class="form-control" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required></textarea>
-                    <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
-                        <div *ngIf="subject.errors.required">Fild is required</div>
+                    <div class="form-group">
+                        <input type="file" ngf [(file)]="file" class="fileUpload1">
+                        <!-- <label class="filelabel py-2">
+                            <i class="fa fa-paperclip">
+                            </i>
+                            <input type="file" ngf [(file)]="file" class="fileUpload1">
+                        </label> -->
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Weitere Informationen</label>
-                    <input type="text" name="information" class="form-control" [(ngModel)]="model.information" #information="ngModel" [ngClass]="{ 'is-invalid': f.submitted && information.invalid }">
+                    <div class="form-group">
+                        <textarea rows="4" name="subject" class="form-control" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required></textarea>
+                        <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
+                            <div *ngIf="subject.errors.required">Fild is required</div>
+                        </div>
+                    </div>
                     
-                </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Next</button>
+                    </div>
+                  </form>
 
-                
-                <div class="pt-3">
-                    <button class="btn btn-primary text-uppercase">senden</button>
-                </div>
-                
-            </form>
+               
+
+            </div>
         </div>
     </div>
 </section>
