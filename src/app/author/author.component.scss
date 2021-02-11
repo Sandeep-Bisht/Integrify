@@ -1,24 +1,27 @@
-.banner{
-    background: url('../../assets/images/inner_banner.png') center center no-repeat;
-    background-size: cover;
-    padding: 130px 0;
-    position: relative;
 
-    h1{
-        position: relative;
-        z-index: 3;
-    }
 
-    &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        top:0;
-        height: 100%;
-        width: 100%;
-        background: rgba(75, 129, 214, .5);
-    }
+
+.fileUpload1{
+    font-size: 14px;
 }
+
+// .filelabel {
+//     width: 100%;
+//     border-radius: 5px;
+//     display: block;
+//     padding: 5px;
+//     transition: border 300ms ease;
+//     cursor: pointer;
+//     text-align: center;
+//     margin: 0;
+//     background: var(--gray-2);
+
+//     > i{
+//         font-size: 20px;
+//     }
+//     .fileUpload1{
+//         font-size: 14px;
+//         display: none;
+//     }
+// }
 
