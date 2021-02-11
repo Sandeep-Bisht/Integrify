@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from '../services/content.service';
 
 @Component({
   selector: 'app-prices',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent implements OnInit {
-
-  constructor() { }
+  priceContent: any ;
+  loading = true;
+  constructor(private readonly contentsService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentsService.getPage('price').subscribe(res => {
+      console.log(res);
+      this.loading = false;
+      this.priceContent = res.data;
+    });
   }
 
 }

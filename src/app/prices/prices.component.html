@@ -1,57 +1,32 @@
-
-<section class="price-section pb-3">
-    <div class="container pt-5 pb-5">
-        <div class="row pt-md-3">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="text-center pb-4">
-                    <h1 class="first-caps pb-4">our prices</h1>
-                    <p class="mb-0">Fixed price guarantee</p>
-                    <p>There are no unexpected price increases or hidden fees! If you do not expressly wish to change the scope of the order, the price promised to you will not change under any circumstances.</p>
+<div *ngIf="!loading">
+    <section class="price-section pb-3">
+        <div class="container pt-5 pb-5">
+            <div class="row pt-md-3">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="text-center pb-4">
+                        <h1 class="first-caps pb-4">{{priceContent?.banner?.en[0]?.heading}}</h1>
+                        <p class="mb-0">{{priceContent?.banner?.en[0]?.subHeading}}</p>
+                        <p>{{priceContent?.banner?.en[0]?.description}}</p>
+                    </div>
                 </div>
             </div>
+    
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0" *ngFor="let item of priceContent?.rateList?.en">
+                    <div class="price-card">
+                        <div class="price-head d-flex align-items-center mb-5">
+                            <span class="mr-3"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.icon[0]"></span>
+                            <h4 class="title mb-0">{{item.heading}}</h4>
+                        </div>
+    
+                        <div class="price-body text-center mb-5" [innerHtml]="item.rate">
+                           <!-- <h2 class="title"> <sup>&euro;</sup> 10 <sub>/page</sub></h2> -->
+                        </div>
+                        <div class="text-center"> <a routerLink="/inquire" class="btn btn-primary">{{priceContent?.inquireNowBtnTitle?.en}}</a></div>
+                    </div>
+                </div>
+            </div>
+           
         </div>
-
-        <div class="row">
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="price-card">
-                    <div class="price-head d-flex align-items-center mb-5">
-                        <span class="mr-3"><img src="assets/images/price1.svg"></span>
-                        <h4 class="title mb-0">Home work</h4>
-                    </div>
-
-                    <div class="price-body text-center mb-5">
-                       <h2 class="title"> <sup>&euro;</sup> 10 <sub>/page</sub></h2>
-                    </div>
-                    <div class="text-center"> <a routerLink="/inquire" class="btn btn-primary">Inquire now</a></div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="price-card">
-                    <div class="price-head d-flex align-items-center mb-5">
-                        <span class="mr-3"><img src="assets/images/price2.svg"></span>
-                        <h4 class="title mb-0">Bachelor thesis</h4>
-                    </div>
-
-                    <div class="price-body text-center mb-5">
-                       <h2 class="title"> <sup>&euro;</sup> 10 <sub>/page</sub></h2>
-                    </div>
-                    <div class="text-center"> <a routerLink="/inquire" class="btn btn-primary">Inquire now</a></div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="price-card">
-                    <div class="price-head d-flex align-items-center mb-5">
-                        <span class="mr-3"><img src="assets/images/price3.svg"></span>
-                        <h4 class="title mb-0">Bachelor thesis</h4>
-                    </div>
-
-                    <div class="price-body text-center mb-5">
-                       <h2 class="title"> <sup>&euro;</sup> 10 <sub>/page</sub></h2>
-                    </div>
-                    <div class="text-center"> <a routerLink="/inquire" class="btn btn-primary">Inquire now</a></div>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-</section>
+    </section>
+</div>

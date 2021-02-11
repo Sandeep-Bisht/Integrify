@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, Observable } from 'rxjs';
 import { ContentService } from '../services/content.service';
-import { finalize, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +8,6 @@ import { finalize, startWith, switchMap } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   homeContent: any ;
-  serviceContent = [];
-  ghostSolutionList = [];
-  howItWorksContent = [];
-  faqContent = [];
   loading = false;
   constructor(private readonly contentsService: ContentService) { }
 
