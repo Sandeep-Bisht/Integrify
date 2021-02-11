@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+$laptop:1600px;
+
+$mediumDevice:991px;
+
+$smallDevice:767px;
+
+$extraSmall:575px;
 
 @import "./assets/style/theme.scss";
 @import "./assets/style/typography.scss";
@@ -25,4 +32,29 @@ a{
 
 .list-type-num{
     list-style-type: decimal;
+}
+.infotext{
+    font-size: 100%;
+    display: inline-block;
+    position: relative;
+    margin-left: -80px;
+    @media(max-width:$extraSmall){
+        margin-left: 0px;
+    }
+}
+.num{
+    font-size: 100%;
+    font-size: 140px;
+    color:rgba(51, 51, 51, .1);
+    line-height: 1;
+    font-weight: 600;
+    // counter-increment: my-sec-counter;
+    // content: counter(my-sec-counter);
+    // font-size: 140px;
+    // color:rgba(51, 51, 51, .1);
+    // line-height: 1;
+
+    @media(max-width:$extraSmall){
+        font-size: 50px;
+    }
 }
