@@ -70,211 +70,80 @@
       
       <section class="services-section mb-4">
         <div class="container py-5"> 
-          <h2 class="text-center text-primary mb-4">Our services</h2>
+          <h2 class="text-center text-primary mb-4">{{homeContent?.ourServiceHeading.en}}</h2>
           <div class="row pt-2">
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of homeContent?.services.en">
               <div class="services-card px-3 pt-4 pb-3">
-              <span class="services-icon1"><img src="assets/images/content.png" alt="Content Icon"></span>
-                <h6 class="mb-3">Plagiarism check</h6>
-                <p>In order to avoid unwanted plagiarism, a plagiarism check should always be carried out. To always be</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-              <div class="services-card px-3 pt-4 pb-3">
-                <span class="services-icon2"><img src="assets/images/prooofreading.png" alt="Prooofreading Icon"></span>
-                <h6 class="mb-3">Proofreading</h6>
-                <p>The proofreading department checks your work for grammar and spelling errors. In addition</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-              <div class="services-card px-3 pt-4 pb-3">
-                <span class="services-icon3"><img src="assets/images/typing.png" alt="Typing Icon"></span>
-              <h6 class="mb-3">Translation</h6>
-                <p>We take over the translation of text passages or create texts directly in the desired foreign language.</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-              <div class="services-card px-3 pt-4 pb-3">
-                <span class="services-icon4"><img src="assets/images/edit.png" alt="Edit Icon"></span>
-              <h6 class="mb-3">Editing</h6>
-                <p>Many academic texts require a specific form in terms of layout, citation style, and other factors. Our experts… </p>
+              <span class="services-icon1"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Content Icon"></span>
+                <h6 class="mb-3">{{item.heading}}</h6>
+                <p>{{item.description}}</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- <section class="customers-sec">
-        <div class="container py-5">
-          <div class="row py-5">
-            <div class="col-md-6 order-md-1 mb-4 mb-md-0">
-              <div class="pt-5">
-                <h2 class="heading-top-text text-uppercase mb-4 lineheight-12">
-                  {{ homeContent?.customerUnderstanding?.en[0].heading }}
-                </h2>
-                <p class="lineheight-2">
-                  {{ homeContent?.customerUnderstanding?.en[0].description }}
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 text-center align-self-center">
-              <img
-              src="{{
-                  'https://squidex.it-blue.net/api/assets/medicrates/' +
-                    homeContent?.customerUnderstanding?.en[0].image[0]
-                }}"
-                alt="customer"
-                class="img-fluid elementor-image"
-              />
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
 
       <section class="customer-section">
         <div class="container">
-          <h2 class="text-center text-primary mb-4 pb-2">Why us</h2>
+          <h2 class="text-center text-primary mb-4 pb-2">{{homeContent?.whyUs.en}}</h2>
 
-          <div class="row mb-5">
-            <div class="col-md-6 order-md-2">
+          <div class="row mb-5" *ngFor="let item of homeContent?.whyUsList.en; let i=index">
+            <div class="col-md-6" [ngClass]="{'order-md-2': i%2 === 0}">
               <div class="customer-card-info pt-4">
-                <div class="title-row mb-4">Lorem ispum goes here</div>
-                <h2 class="mb-4">Your experts for every project</h2>
+                <div class="title-row mb-4">{{item.heading}}</div>
+                <h2 class="mb-4">{{item.subHeading}}</h2>
                 <p>
-                  Project presentations, deadlines and exam dates. Every student knows these stressors only too well. If several exams and homework are due within a few weeks, then not only does the work ethic suffer, but it can also cost nerves.
+                  {{item.description}}
                 </p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="customer-card border-shape1">
-                <img src="assets/images/customer1.png" alt="Customer Image" class="img-fluid">
+                <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Customer Image" class="img-fluid">
               </div>
             </div>
           </div>
 
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <div class="customer-card-info pt-4">
-                <div class="title-row mb-4">Lorem ispum goes here</div>
-                <h2 class="mb-4">We understand our customers</h2>
-                <p>
-                  Who takes care of the thesis when you get sick and fail? How do you get the time to do commitments outside of university? Who can help when everything becomes too much or there is a lack of motivation? Students grapple with problems of this kind every day.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="customer-card border-shape2">
-                <img src="assets/images/customer2.png" alt="Customer Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-          <div class="row mb-5">
-            <div class="col-md-6 order-md-1">
-              <div class="customer-card-info pt-4">
-                <div class="title-row mb-4">Less stress in your studies</div>
-                <h2 class="mb-4">Your experts for every project</h2>
-                <p>
-                  Studying doesn’t have to be a stress factor. With a helping hand that takes on time-consuming work and stands by your side, you can reach your goal faster and easier. This is exactly what GhostSolutions stands for as a professional service provider for academic work. We work together with our customers to lead them to their goal - discreetly, reliably and competently.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="customer-card border-shape1">
-                <img src="assets/images/customer3.png" alt="Customer Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
+         
         </div>
       </section>
-
-      <!-- <section class="container py-5">
-        <div class="row py-5">
-          <div class="col-md-6">
-            <div class="pt-5">
-              <h2 class="heading-top-text text-uppercase mb-4 lineheight-12">
-                {{ homeContent?.studiesSection?.en[0].heading }}
-              </h2>
-              <p class="lineheight-2">
-                  {{ homeContent?.studiesSection?.en[0].description }}
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 text-center align-self-center">
-            <img
-            src="{{
-              'https://squidex.it-blue.net/api/assets/medicrates/' +
-                homeContent?.studiesSection?.en[0].image[0]
-            }}"
-              alt="studies"
-              class="img-fluid elementor-image"
-            />
-          </div>
-        </div>
-      </section> -->
       
       <section class="goals-section py-5 mb-5">
         <div class="container">
           <div class="row">
             <div class="col-md-6 mb-4 mb-md-0">
-              <h2 class="text-white mb-4">Full Throttle To The Goal!</h2>
-              <p class="text-white mb-0">Take advantage of the support of our ghostwriters now and benefit from our expert knowledge!</p>
+              <h2 class="text-white mb-4">{{homeContent?.fullThrotleContent.en[0].heading}}</h2>
+              <p class="text-white mb-0">{{homeContent?.fullThrotleContent.en[0].desc}}</p>
             </div>
             <div class="col-md-6 text-center align-self-center">
-              <a routerLink="/inquire" class="btn des-btn des-white-btn">Inquire now</a>
+              <a routerLink="/inquire" class="btn des-btn des-white-btn">{{homeContent?.fullThrotleContent.en[0].btnTitle}}</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- <section class="services py-5">
-        <div class="container py-5">
-          <h2
-            class="heading-bottom-text text-uppercase lineheight-12 text-center text-white mb-5"
-          >
-          {{ homeContent?.ourServiceHeading?.en }}
-          </h2>
-          <div class="row pt-3">
-            <div class="col-md-6 mb-3" *ngFor="let content of serviceContent">
-              <div class="services-col text-center text-white p-3">
-                <h3 class="fontweight-medium mb-4">
-                  <a href="#" class="text-white">{{content.heading}}</a>
-                </h3>
-                <p class="mb-0">
-                  {{content.description}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
-
       <section class="work-section pt-4 mb-5">
         <div class="container">
-          <h2 class="mb-5 pb-md-4 text-center pt-md-1">How it works</h2>
+          <h2 class="mb-5 pb-md-4 text-center pt-md-1">{{homeContent?.howItWorksHeading.en}}</h2>
 
           <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2">
             <li>
               <small></small>
               <div>
-                 <img src="assets/images/inquiry.svg" alt="Inquiry" class="img-fluid">
+                 <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.en[0]?.firstParagraphImage[0]" alt="Inquiry" class="img-fluid">
               </div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info">
-                <h5><small class="num">1</small><small class="infotext">Make an inquiry</small></h5>
-                <p>Make a non-binding inquiry using our inquiry form.</p>
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.firstParagraph">
               </div>
             </li>
             
             <li>
               <small></small>
-              <div class="work-item-info">
-                <h5><small class="num">2</small><small class="infotext">Receive an offer</small></h5>
-                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p>
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.secondParaLeftContent">
+                <!-- <h5><span>Receive an offer</span></h5>
+                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p> -->
               </div>
             </li>
             <li>
@@ -282,9 +151,7 @@
               <div class="work-info info-ahape-light">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3">
-                      <span class="d-block">Hi, Bob,</span>
-                      <span class="d-block">Greeting of the day, we have recived your request for ghostwriting services</span>
+                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.secondParaRightContent">
                     </div>
                   </div>
                 </div>
@@ -294,30 +161,30 @@
             <li>
               <small></small>
 
-              <div><img src="assets/images/order.svg" alt="Order" class="img-fluid"></div>
+              <div><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.en[0]?.thirdParaLeftImage[0]" alt="Order" class="img-fluid"></div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info">
-                <h5><small class="num">3</small> <small class="infotext">Place order</small></h5>
-                <p>Are you satisfied with the offer? Then give us the final go!</p>
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.thirdParaRightContent">
+                <!-- <h5><span>Place order</span></h5>
+                <p>Are you satisfied with the offer? Then give us the final go!</p> -->
               </div>
             </li>
 
             <li>
               <small></small>
-              <div class="work-item-info">
-                <h5><small class="num">4</small><small class="infotext">Final delivery</small></h5>
-                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p>
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.fourthParaleftContent">
+                <!-- <h5><span>Final delivery</span></h5>
+                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p> -->
               </div>
             </li>
             <li>
               <div class="work-info info-ahape-dark">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3">
-                      <span class="d-block">Hi, Bob,</span>
-                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span>
+                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.fourthParaRightContent">
+                      <!-- <span class="d-block">Hi, Bob,</span>
+                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span> -->
                     </div>
                   </div>
                 </div>
@@ -329,249 +196,37 @@
         </div>
       </section>
 
-
-
-      <!-- <section class="container py-5">
-        <div class="py-5">
-          <h2
-            class="heading-bottom-text text-uppercase lineheight-12 text-center mb-5"
-          >
-          {{ homeContent?.ghostSolution?.en[0].ghostSolutionFirstHeading }}
-          </h2>
-        </div>
-      
-        <div class="row">
-          <div class="col-md-6 mb-3" *ngFor="let content of ghostSolutionList">
-            <div class="card ghost-card border-0">
-              <div class="row no-gutters">
-                <div class="col-md-4 col-lg-3 align-self-center">
-                  <span class="ghost-icon mx-auto mx-md-0"
-                    ><i [ngClass]="content.image"></i></span>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <div class="card-body text-center text-md-left pl-lg-0">
-                    <h4 class="card-title text-uppercase fontweight-medium mb-3">
-                      {{content.heading}}
-                    </h4>
-                    <p>
-                      {{content.description}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
-      <!-- <section class="ghost-section py-5">
-        <div class="container py-4">
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-              <div class="text-white text-center">
-                <h2 class="text-uppercase fontweight-bold mb-0">{{ homeContent?.ghostSolution?.en[0].ghostSolutionSecondHeading }}</h2>
-                <h2 class="text-uppercase fontweight-light mb-5">
-                  {{ homeContent?.ghostSolution?.en[0].ghostSolutionSubHeading }}
-                </h2>
-                <p class="mb-5">
-                  {{ homeContent?.ghostSolution?.en[0].ghostSolutionDescription }}
-                </p>
-                <a href="#" class="btn btn-primary"
-                  >{{ homeContent?.faqHeading?.en }} <span class="btnairro">&#x2192;</span></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
-      <!-- <section class="container py-5">
-        <div class="py-5">
-          <h2
-            class="heading-bottom-text text-uppercase lineheight-12 text-center mb-5"
-          >
-          {{ homeContent?.howItWorksHeading?.en }}
-          </h2>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let content of howItWorksContent">
-            <div class="social-work text-center">
-              <span><i [ngClass]="content.icon"></i></span>
-              <h4 class="text-uppercase fontweight-medium">{{content.heading}}</h4>
-              <p class="lineheight-2">
-                {{content.content}}
-              </p>
-            </div>
-          </div>
-         
-        </div>
-      </section> -->
-      
- 
     <section class="asked-section">
       <div class="container mb-5 pb-md-2 pt-md-5">
-        <h2 class="text-center pb-4">Frequently asked Questions</h2>
+        <h2 class="text-center pb-4">{{homeContent?.faqHeading.en}}</h2>
         <div class="accordion indicator-plus-before round-indicator" id="accordionH">
           <div class="card m-b-0 border-0">
-            <div class="mb-4">
+            <div class="mb-4" *ngFor="let item of homeContent?.faqContent.en; let i = index">
               <div
                 class="card-header collapsed"
                 role="tab"
-                id="headingOneH"
-                href="#collapseOneH"
+                [id]="'heading'+i"
+                [attr.href]="'#collapse'+i"
                 data-toggle="collapse"
-                data-parent="#accordionH"
+                [data-parent]="'#accordion'+i"
                 aria-expanded="false"
-                aria-controls="collapseOneH"
+                [aria-controls]="'collapse'+i"
               >
-                <a class="card-title">What do the services offered cost?</a>
+                <a class="card-title">{{item.heading}}</a>
               </div>
               <div
                 class="collapse"
-                id="collapseOneH"
+                [id]="'collapse'+i"
                 role="tabpanel"
-                aria-labelledby="headingOneH"
+                [aria-labelledby]="'heading'+i"
               >
                 <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+                  {{item.description}}
                 </div>
               </div>
             </div>
-      
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingTwoH"
-                href="#collapseTwoH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseTwoH"
-              >
-                <a class="card-title">How long does it take to process?</a>
-              </div>
-              <div
-                class="collapse"
-                id="collapseTwoH"
-                role="tabpanel"
-                aria-labelledby="headingTwoH"
-              >
-                <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                </div>
-              </div>
-            </div>
-      
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingThreeH"
-                href="#collapseThreeH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseThreeH"
-              >
-                <a class="card-title"
-                  >Who is my contact person for changes or other comments?</a
-                >
-              </div>
-              <div
-                class="collapse"
-                id="collapseThreeH"
-                role="tabpanel"
-                aria-labelledby="headingThreeH"
-              >
-                <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                </div>
-              </div>
-            </div>
-      
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingFourH"
-                href="#collapseFourH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseFourH"
-              >
-                <a class="card-title">How do I become a GhostSolutions author?</a>
-              </div>
-              <div
-                class="collapse"
-                id="collapseFourH"
-                role="tabpanel"
-                aria-labelledby="headingFourH"
-              >
-                <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                </div>
-              </div>
-            </div>
-      
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingFiveH"
-                href="#collapseFiveH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseFiveH"
-              >
-                <a class="card-title">Can I deduct the service from tax?</a>
-              </div>
-              <div
-                class="collapse"
-                id="collapseFiveH"
-                role="tabpanel"
-                aria-labelledby="headingFiveH"
-              >
-                <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                </div>
-              </div>
-            </div>
-      
-            <div class="mb-4">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                id="headingSixH"
-                href="#collapseSixH"
-                data-toggle="collapse"
-                data-parent="#accordionH"
-                aria-expanded="false"
-                aria-controls="collapseSixH"
-              >
-                <a class="card-title">
-                  Can I pay anonymously?</a
-                >
-              </div>
-              <div
-                class="collapse"
-                id="collapseSixH"
-                role="tabpanel"
-                aria-labelledby="headingSixH"
-              >
-                <div class="card-body">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                </div>
-              </div>
-            </div>
-      
           </div>
         </div>
       </div>
     </section> 
-     
-      
-      
 </div>
