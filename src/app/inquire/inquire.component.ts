@@ -50,7 +50,6 @@ export class InquireComponent implements OnInit {
       return;
     }
     const param = JSON.stringify(this.generateParam());
-    this.router.navigate(['/thank-you']);
     this.contentsService.sendRequest('inquiryform', param).subscribe(item => {
       console.log(item);
       this.formSuccess = true;

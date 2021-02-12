@@ -25,35 +25,59 @@ export class ContentService {
                 }
                 return items[0];
             })
+            );
+    }
+
+    public getMulitpleSchema(slug): Observable<any> {
+        const url = this.config.buildUrl(`api/content/{app}/${slug}`);
+
+        return this.httpClient.get<any>(url)
+            .pipe(map(payload => {
+                const { total, items } = payload;
+
+                return { total, posts: items};
+            })
         );
     }
 
-    public sendRequest(slug: string, param): Observable<any>{
+    public sendRequest(slug: string, param): Observable<any> {
         const url = this.config.buildUrl(`api/content/{app}/${slug}`);
         let requestHeaders = new HttpHeaders();
         requestHeaders = requestHeaders.set(
-          'content-type',
-          'application/json'
+            'content-type',
+            'application/json'
         );
         // requestHeaders = requestHeaders.set('authorization', `${l()}`);
         return this.httpClient.post(url, param, {
             responseType: 'json',
             headers: requestHeaders
         })
-        .pipe(catchError(this.handleError));
+            .pipe(catchError(this.handleError));
+    }
+
+    public uploadDocument(slug: string, param): Observable<any> {
+        const url = this.config.buildUrl(`api/apps/{app}/${slug}`);
+        return this.httpClient.post(url, param)
+            .pipe(catchError(this.handleError));
+    }
+
+    public deleteDocument(slug: string): Observable<any> {
+        const url = this.config.buildUrl(`api/apps/{app}/${slug}`);
+        return this.httpClient.delete(url)
+            .pipe(catchError(this.handleError));
     }
 
     // tslint:disable-next-line:typedef
     public handleError(error) {
         let errorMessage;
         if (error.error instanceof ErrorEvent) {
-          console.log(error);
-          errorMessage = error.error;
+            console.log(error);
+            errorMessage = error.error;
         } else {
             errorMessage = error.error;
 
         }
         console.log(error.error);
         return throwError(errorMessage);
-      }
+    }
 }

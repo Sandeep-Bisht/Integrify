@@ -9,14 +9,11 @@ import { ContentService } from '../services/content.service';
   styleUrls: ['./author.component.scss']
 })
 export class AuthorComponent implements OnInit {
-
   authorForm: FormGroup;
   submitted = false;
-
   file;
-
   authorContent: any ;
-
+  formSuccess = false;
 
   constructor(private readonly contentsService: ContentService, private formBuilder: FormBuilder){}
 
@@ -33,39 +30,86 @@ export class AuthorComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
-      subjectarea: ['', Validators.required],
+      title: ['', Validators.required],
       language: ['', Validators.required],
       qualification: ['', Validators.required],
-      subject: ['', Validators.required]
+      message: ['', Validators.required],
+      document: ['', Validators.required],
+      documentName: ['']
    });
 
 
   }
 
-    // convenience getter for easy access to form fields
+  deleteFile(): void {
+    this.contentsService.deleteDocument(`assets/${this.authorForm.controls.document.value}`).subscribe();
+    this.authorForm.controls.document.setValue('');
+    this.authorForm.controls.documentName.setValue('');
+  }
+
+  onImageUpload(event): void {
+    if (event && event.target.files[0]) {
+      const formdata = new FormData();
+      formdata.append('file', event.target.files[0], event.target.files[0].name);
+      this.contentsService.uploadDocument('assets', formdata).subscribe(item => {
+        this.authorForm.controls.document.setValue(item.id);
+        this.authorForm.controls.documentName.setValue(item.fileName);
+      }, error => {
+        console.log(error);
+      });
+    }
+  }
+
+    // tslint:disable-next-line:typedef
     get f() { return this.authorForm.controls; }
 
-    onSubmit() {
-        this.submitted = true;
-
-        // stop here if form is invalid
-        if (this.authorForm.invalid) {
-            return;
-        }
-
-        // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.authorForm.value, null, 4));
+    // tslint:disable-next-line:typedef
+    onSubmit(): void {
+      this.submitted = true;
+      // stop here if form is invalid
+      if (this.authorForm.invalid) {
+        return;
+      }
+      const param = JSON.stringify(this.generateParam());
+      this.contentsService.sendRequest('authorform', param).subscribe(item => {
+        console.log(item);
+        this.formSuccess = true;
+      }, error => {
+        console.log(error);
+        this.formSuccess = false;
+      });
     }
 
-  // tslint:disable-next-line:typedef
-  // onSubmit(form: any) {
-
-  //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
-
-  //   setTimeout(() => {
-  //    form.reset();
-  //   }, 3000);
-  // }
-
+    generateParam = () => {
+      return {
+        firstName: {
+          iv: this.authorForm.controls.firstName.value
+        },
+        lastName: {
+          iv: this.authorForm.controls.lastName.value
+        },
+        language: {
+          iv: this.authorForm.controls.language.value
+        },
+        phone: {
+          iv: this.authorForm.controls.phone.value
+        },
+        email: {
+          iv: this.authorForm.controls.email.value
+        },
+        title: {
+          iv: this.authorForm.controls.title.value
+        },
+        document: {
+          iv: this.authorForm.controls.document.value
+        },
+        message: {
+          iv: this.authorForm.controls.message.value
+        },
+        qualification: {
+          iv: this.authorForm.controls.qualification.value
+        }
+      };
+    }
 
 }
