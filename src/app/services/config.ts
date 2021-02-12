@@ -17,7 +17,7 @@ export class Config {
         }
 
         const result = `${this.url}/${url}`.replace('{app}', this.appName);
-
+        console.log(result);
         return result;
     }
 }

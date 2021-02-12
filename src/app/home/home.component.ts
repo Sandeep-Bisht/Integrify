@@ -8,12 +8,10 @@ import { ContentService } from '../services/content.service';
 })
 export class HomeComponent implements OnInit {
   homeContent: any ;
-  loading = false;
   constructor(private readonly contentsService: ContentService) { }
 
   ngOnInit(): void {
     this.contentsService.getPage('homepage').subscribe(res => {
-      this.loading = true;
       this.homeContent = res.data;
     });
   }

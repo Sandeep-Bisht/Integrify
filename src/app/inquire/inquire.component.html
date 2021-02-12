@@ -1,81 +1,212 @@
+<div class="container pt-5 pb-5" *ngIf="!formSuccess">
+  <div class="row pt-md-3 mb-5">
+    <div class="col-md-8 offset-md-2">
+      <div class="text-center pb-4">
+        <h1 class="first-caps pb-4">{{ inquiryContent?.heading?.en }}</h1>
+        <p>{{ inquiryContent?.description?.en }}</p>
+      </div>
 
-<div class="container pt-5 pb-5">
-
-    <div class="row pt-md-3 mb-5">
-        <div class="col-md-8 offset-md-2">
-            <div class="text-center pb-4">
-                <h1 class="first-caps pb-4">inquire now</h1>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+      <div class="bg-white shadow rounded px-4 py-5">
+        <form
+          [formGroup]="inquireForm"
+          (ngSubmit)="onSubmit()"
+          class="customeform-section px-2"
+        >
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <select
+                formControlName="salutation"
+                class="form-control form-control-lg"
+              >
+                <option value="Mr.">Mr.</option>
+                <option value="Miss.">Miss.</option>
+              </select>
+              <div *ngIf="submitted && f.salutation.errors" class="text-danger">
+                <div *ngIf="f.salutation.errors.required">
+                  Title is required
+                </div>
+              </div>
             </div>
-
-            <div class="bg-white shadow rounded px-4 py-5">
-                <form class="customeform-section px-2">
-                    <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <select class="form-control form-control-lg">
-                                <option selected>Mr.</option>
-                                <option>Miss.</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-5">
-                          <input type="text" class="form-control form-control-lg" placeholder="First name">
-                        </div>
-                        <div class="form-group col-md-5">
-                          <input type="text" class="form-control form-control-lg" placeholder="Last name">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <input type="email" class="form-control form-control-lg" placeholder="Email address">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <input type="text" class="form-control form-control-lg" placeholder="Phone">
-                      </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <select class="form-control form-control-lg">
-                                <option >Type of service</option>
-                                <option selected>Mr.</option>
-                                <option>Miss.</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <select class="form-control form-control-lg">
-                                <option selected>Preferred language</option>
-                                <option>En</option>
-                                <option>De</option>
-                            </select>
-                        </div>
-                    </div>
-                
-                    <div class="form-group">
-                        <input type="text" placeholder="Delivery date" class="form-control form-control-lg" bsDatepicker>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-control"  rows="4"></textarea>
-                    </div>
-                    
-                   
-                    <div class="form-group">
-                        <p>Does your work include an empirical elaboration (e.g. statistical analysis, evaluation of surveys, expert interviews, images, etc.)?</p>
-                        <div>
-                            <div class="form-check form-check-inline mr-5">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio_yes" value="option1">
-                                <label class="form-check-label" for="radio_yes">Yes</label>
-                              </div>
-                              <div class="form-check form-check-inline mr-5">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio_no" value="option2">
-                                <label class="form-check-label" for="radio_no">No</label>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-primary">Next</button>
-                    </div>
-                  </form>
+            <div class="form-group col-md-5">
+              <input
+                formControlName="firstName"
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="First name"
+              />
+              <div *ngIf="submitted && f.firstName.errors" class="text-danger">
+                <div *ngIf="f.firstName.errors.required">
+                  First Name is required
+                </div>
+              </div>
             </div>
-        </div>
+            <div class="form-group col-md-5">
+              <input
+                formControlName="lastName"
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Last name"
+              />
+              <div *ngIf="submitted && f.lastName.errors" class="text-danger">
+                <div *ngIf="f.lastName.errors.required">
+                  Last Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Email address"
+              />
+              <div *ngIf="submitted && f.email.errors" class="text-danger">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">
+                  Email is not a valid email address.
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <input
+                type="tel"
+                class="form-control form-control-lg"
+                placeholder="Phone"
+                formControlName="phone"
+              />
+              <div *ngIf="submitted && f.phone.errors" class="text-danger">
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                <div *ngIf="f.phone.errors.pattern">Enter numbers only</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <select
+                formControlName="typeOfService"
+                class="form-control form-control-lg"
+              >
+                <option value="" hidden selected>Type of service</option>
+                <option value="Plgraism Check">Plgraism Check</option>
+                <option value="Proof Reading">Proof Reading</option>
+                <option value="Translation">Translation</option>
+                <option value="Editing">Editing</option>
+              </select>
+              <div
+                *ngIf="submitted && f.typeOfService.errors"
+                class="text-danger"
+              >
+                <div *ngIf="f.typeOfService.errors.required">
+                  Service Type is required
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <select formControlName="preferredLanguage" class="form-control form-control-lg">
+                <option value="" hidden selected>Preferred language</option>
+                <option value="EN">En</option>
+                <option value="DE">De</option>
+              </select>
+              <div
+                *ngIf="submitted && f.preferredLanguage.errors"
+                class="text-danger"
+              >
+                <div *ngIf="f.preferredLanguage.errors.required">
+                  Preferred Language is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input
+                type="text"
+                placeholder="Delivery date"
+                class="form-control form-control-lg"
+                bsDatepicker
+                #dp="bsDatepicker" [bsConfig]="bsConfig"
+                formControlName="deliveryDate"
+              />
+              <div
+                *ngIf="submitted && f.deliveryDate.errors"
+                class="text-danger"
+              >
+                <div *ngIf="f.deliveryDate.errors.required">
+                  Delivery Date is required
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <select
+                formControlName="subject"
+                class="form-control form-control-lg"
+              >
+                <option value="" hidden selected>Subject</option>
+                <option value="Economics">Economics</option>
+                <option value="Social Science">Social Science</option>
+                <option value="Humanitites">Humanitites</option>
+                <option value="Sports Science">Sports Science</option>
+              </select>
+              <div *ngIf="submitted && f.subject.errors" class="text-danger">
+                <div *ngIf="f.subject.errors.required">
+                  Service Type is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              formControlName="description"
+              class="form-control"
+              rows="4"
+            ></textarea>
+            <div *ngIf="submitted && f.description.errors" class="text-danger">
+              <div *ngIf="f.description.errors.required">
+                Description is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <p>
+              Does your work include an empirical elaboration (e.g. statistical
+              analysis, evaluation of surveys, expert interviews, images,
+              etc.)?<span>*</span>
+            </p>
+            <div>
+              <div class="form-check form-check-inline mr-5">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="yes_em"
+                  value="Yes"
+                  formControlName="empiricalElaboration"
+                />
+                <label class="form-check-label" for="yes_em">Yes</label>
+              </div>
+              <div class="form-check form-check-inline mr-5">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="no_em"
+                  value="No"
+                  formControlName="empiricalElaboration"
+                />
+                <label class="form-check-label" for="no_em">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Next</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
+
+<app-thankyou *ngIf="formSuccess"></app-thankyou>

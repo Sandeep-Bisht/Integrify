@@ -13,6 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        // console.log(this.invokeInternal(req,next,true));
         return this.invokeInternal(req, next, true);
     }
 

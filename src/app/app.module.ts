@@ -20,13 +20,13 @@ import { EditiComponent } from './editi/editi.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
-
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { Config, DefaultConfig } from 'src/app/services/config';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { ngfModule } from 'angular-file';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { ngfModule } from 'angular-file';
     PrivacyComponent,
     PlagiarismComponent,
     EditiComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserAnimationsModule,
