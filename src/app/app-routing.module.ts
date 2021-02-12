@@ -9,12 +9,9 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { PlagiarismComponent } from './plagiarism/plagiarism.component';
 
 const routes: Routes = [
-  {
-    path: 'services',
-    loadChildren: () => import('./services-page/services-page.module').then(m => m.ServicesPageModule)
-  },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch : 'full'},
   { path: 'prices', component: PricesComponent, pathMatch : 'full'},
@@ -23,6 +20,7 @@ const routes: Routes = [
   { path: 'imprint', component: ImprintComponent, pathMatch : 'full'},
   { path: 'condations', component: CondationsComponent, pathMatch : 'full'},
   { path: 'privacy', component: PrivacyComponent, pathMatch : 'full'},
+  { path: 'plagi', component: PlagiarismComponent, pathMatch : 'full'},
   { path: 'thankyou', component: ThankyouComponent, pathMatch : 'full'}
 ];
 

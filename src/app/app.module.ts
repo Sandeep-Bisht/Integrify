@@ -23,6 +23,7 @@ import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { ngfModule } from 'angular-file';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { PlagiarismComponent } from './plagiarism/plagiarism.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     CondationsComponent,
     PrivacyComponent,
     PreloaderComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    PlagiarismComponent
   ],
   imports: [
     BrowserAnimationsModule,
