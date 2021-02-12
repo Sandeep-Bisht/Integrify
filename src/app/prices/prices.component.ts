@@ -7,7 +7,10 @@ import { ContentService } from '../services/content.service';
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent implements OnInit {
+
   priceContent: any ;
+  loading = true;
+
   constructor(private readonly contentsService: ContentService) { }
 
   ngOnInit(): void {

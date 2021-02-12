@@ -5,8 +5,8 @@
     <div class="row pt-md-3">
         <div class="col-md-8 offset-md-2">
             <div class="text-center pb-4">
-                <h1 class="first-caps pb-4">Become An author</h1>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <h1 class="first-caps pb-4">{{authorContent?.heading?.en}}</h1>
+                <p>{{authorContent?.description?.en}}</p>
             </div>
         </div>
     </div>
@@ -15,94 +15,95 @@
         <div class="col-md-8 offset-md-2">
 
             <div class="bg-white shadow rounded px-4 py-5">
-                <h4 class="fontweight-bold mb-4">Kontaktformular</h4>
+                <h4 class="fontweight-bold mb-4">{{authorContent?.formHeading?.en}}</h4>
 
-                <form class="customeform-section" name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                <form class="customeform-section" [formGroup]="authorForm" (ngSubmit)="onSubmit()">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                          <input type="text" placeholder="First name" name="firstName" class="form-control form-control-lg" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required>
-                            <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                                <div *ngIf="firstName.errors.required">Fild is required</div>
+                            <input type="text" placeholder="Frst name" formControlName="firstName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                          <input type="text" placeholder="Last name" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
-                          <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                              <div *ngIf="lastName.errors.required">Fild is required</div>
-                          </div>
+                            <input type="text" placeholder="Last name" formControlName="lastName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <input type="email" placeholder="Email address" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
-                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                            <div *ngIf="email.errors.required">Email is required</div>
-                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        <input type="text" placeholder="Email" formControlName="email" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                         </div>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" placeholder="Phone" name="phone" class="form-control" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
-                        <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
-                            <div *ngIf="phone.errors.required">Fild is required</div>
+                        <input type="text" placeholder="Phone" formControlName="phone" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">This Fild is required</div>
                         </div>
                       </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <select class="form-control form-control-lg">
-                                <option >Subject area</option>
-                                <option>option1</option>
-                                <option>option2</option>
+                            <select formControlName="subjectarea" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.subjectarea.errors }">
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Miss">Miss</option>
+                                <option value="Ms">Ms</option>
                             </select>
+                            <div *ngIf="submitted && f.subjectarea.errors" class="invalid-feedback">
+                                <div *ngIf="f.subjectarea.errors.required">Fild is required</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <select class="form-control form-control-lg">
-                                <option selected>Preferred language</option>
-                                <option>En</option>
-                                <option>De</option>
+                            <select formControlName="language" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.language.errors }">
+                                <option value=""></option>
+                                <option value="en">En</option>
+                                <option value="de">De</option>
                             </select>
+                            <div *ngIf="submitted && f.language.errors" class="invalid-feedback">
+                                <div *ngIf="f.language.errors.required">Fild is required</div>
+                            </div>
                         </div>
                     </div>
                 
                     <div class="form-group">
-                        <select name="qualification" class="form-control form-control-lg" [(ngModel)]="model.qualification" #qualification="ngModel" [ngClass]="{ 'is-invalid': f.submitted && qualification.invalid }" required class="form-control form-control-lg">
-                            <option>Qualification</option>
-                            <option>Student</option>
-                            <option>Bachelor</option>
-                            <option>Master</option>
-                            <option>Diplom</option>
-                            <option>Magister</option>
-                            <option>Promotion</option>
-                            <option>Andere</option>
+                        <select formControlName="qualification" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }">
+                            <option value="">Qualification</option>
+                            <option value="">Student</option>
+                            <option value="">Bachelor</option>
+                            <option value="">Master</option>
+                            <option value="">Diplom</option>
+                            <option value="">Magister</option>
+                            <option value="">Promotion</option>
+                            <option value="">Andere</option>
                             </select>
-                            <div *ngIf="f.submitted && qualification.invalid" class="invalid-feedback">
-                                <div *ngIf="qualification.errors.required">Fild is required</div>
+                            <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                                <div *ngIf="f.qualification.errors.required">Fild is required</div>
                             </div>
                     </div>
 
-
-                    <div class="form-group">
-                        <input type="file" ngf [(file)]="file" class="fileUpload1">
-                        <!-- <label class="filelabel py-2">
-                            <i class="fa fa-paperclip">
-                            </i>
-                            <input type="file" ngf [(file)]="file" class="fileUpload1">
-                        </label> -->
+                     <div class="form-group">
+                        <input name="certificate" class="form-control" type="file" ngf [(file)]="file" class="fileUpload1">
                     </div>
 
                     <div class="form-group">
-                        <textarea rows="4" name="subject" class="form-control" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required></textarea>
-                        <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
-                            <div *ngIf="subject.errors.required">Fild is required</div>
+                        <textarea placeholder="Message" rows="4" formControlName="subject" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }"></textarea>
+                        <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                            <div *ngIf="f.subject.errors.required">Last Name is required</div>
                         </div>
                     </div>
-                    
                     <div class="text-center">
                         <button class="btn btn-primary">Next</button>
                     </div>
                   </form>
 
                
+                 
 
             </div>
         </div>

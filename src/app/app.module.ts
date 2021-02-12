@@ -12,11 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PricesComponent } from './prices/prices.component';
 import { AuthorComponent } from './author/author.component';
-import { TranslationComponent } from './translation/translation.component';
 import { InquireComponent } from './inquire/inquire.component';
-import { ProofreadingComponent } from './proofreading/proofreading.component';
-import { PlagiarismComponent } from './plagiarism/plagiarism.component';
-import { EditiComponent } from './editi/editi.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
@@ -37,13 +33,9 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     PricesComponent,
     AuthorComponent,
     InquireComponent,
-    TranslationComponent,
-    ProofreadingComponent,
     ImprintComponent,
     CondationsComponent,
     PrivacyComponent,
-    PlagiarismComponent,
-    EditiComponent,
     PreloaderComponent,
     ThankyouComponent
   ],
@@ -55,7 +47,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ReactiveFormsModule,
     FormsModule,
     ngfModule,
-    BsDatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [
     { provide: Config, useValue: DefaultConfig },
