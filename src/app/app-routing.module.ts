@@ -8,6 +8,7 @@ import { InquireComponent } from './inquire/inquire.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'inquire', component: InquireComponent, pathMatch : 'full'},
   { path: 'imprint', component: ImprintComponent, pathMatch : 'full'},
   { path: 'condations', component: CondationsComponent, pathMatch : 'full'},
-  { path: 'privacy', component: PrivacyComponent, pathMatch : 'full'}
+  { path: 'privacy', component: PrivacyComponent, pathMatch : 'full'},
+  { path: 'thankyou', component: ThankyouComponent, pathMatch : 'full'}
 ];
 
 @NgModule({

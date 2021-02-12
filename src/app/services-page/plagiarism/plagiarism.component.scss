@@ -7,11 +7,10 @@ $extraSmall:575px;
 
 
 .description-section{
-    background: url('../../../assets/images/flw_icon2.svg'), 
-    url('../../../assets/images/plus_group.svg');
-    background-repeat: no-repeat, no-repeat;
-    background-position: 0% 150px, 100% 45%;
-    background-size:10%, 20%;
+    background: url('../../../assets/images/plus_group.svg');
+    background-repeat: no-repeat;
+    background-position:100% 45%;
+    background-size: 20%;
 
     @media(max-width:$smallDevice){
         background-position: 0% 30px, 100% 38%;

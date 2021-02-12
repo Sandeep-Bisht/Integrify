@@ -41,7 +41,12 @@ $extraSmall:575px;
 }
 
 
-
+.description-section{
+    background: url('../../assets/images/flw_icon2.svg');
+    background-repeat:no-repeat;
+    background-position: 0% 130px;
+    background-size:10%;
+}
 
 .aside-nav{
     li{
@@ -54,6 +59,7 @@ $extraSmall:575px;
             font-size: 16px;
             color:var(--black-2);
             padding: 1.2rem 1rem;
+            background: var(--white);
 
             &::after{
                 content: '';
