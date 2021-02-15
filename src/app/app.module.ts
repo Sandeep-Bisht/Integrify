@@ -24,6 +24,8 @@ import { PreloaderComponent } from './preloader/preloader.component';
 import { ngfModule } from 'angular-file';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { PlagiarismComponent } from './plagiarism/plagiarism.component';
+import { ServiceComponent } from './service/service.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { PlagiarismComponent } from './plagiarism/plagiarism.component';
     PrivacyComponent,
     PreloaderComponent,
     ThankyouComponent,
-    PlagiarismComponent
+    PlagiarismComponent,
+    ServiceComponent,
+    ServiceDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from '../services/content.service';
 
 @Component({
   selector: 'app-condations',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./condations.component.scss']
 })
 export class CondationsComponent implements OnInit {
-
-  constructor() { }
+  conditionContent: any;
+  constructor(private readonly contentsService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentsService.getPage('termsandcondition').subscribe(res => {
+      this.conditionContent = res.data;
+    });
   }
 
 }

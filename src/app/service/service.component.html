@@ -1,0 +1,42 @@
+
+
+
+<section class="banner-section mb-5">
+    <div class="container text-center">
+        <h1>{{getName()}}</h1>
+        <p>The check for external content</p>
+    </div>
+  </section>
+  
+  
+  
+  <section class="description-section pt-md-4 mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 d-none d-lg-block">
+                <ul class="list-unstyled aside-nav">
+                    <li *ngFor="let item of serviceList"><a class="nav-link" routerLinkActive="active" [routerLink]="item.data.slug.iv">{{item.data.menuHeading.en}}</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+              <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  
+  <section class="goals-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="text-white mb-4">Full Throttle To The Goal!</h2>
+          <p class="text-white mb-0">Take advantage of the support of our ghostwriters now and benefit from our expert knowledge!</p>
+        </div>
+        <div class="col-md-6 text-center align-self-center">
+          <a routerLink="/inquire" class="btn des-btn des-white-btn">Inquire now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

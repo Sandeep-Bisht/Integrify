@@ -28,7 +28,7 @@ export class ContentService {
             );
     }
 
-    public getMulitpleSchema(slug): Observable<any> {
+    public getmultipleData(slug): Observable<any> {
         const url = this.config.buildUrl(`api/content/{app}/${slug}`);
 
         return this.httpClient.get<any>(url)
@@ -36,6 +36,18 @@ export class ContentService {
                 const { total, items } = payload;
 
                 return { total, posts: items};
+            })
+        );
+    }
+
+    public getDetailPage(slug, filterId): Observable<any> {
+        const url = this.config.buildUrl(`api/content/{app}/${slug}`);
+
+        return this.httpClient.get<any>(url)
+            .pipe(map(payload => {
+                const { total, items } = payload;
+                const data = items.find(x => x.data.slug.iv === filterId);
+                return { total, posts: items, data};
             })
         );
     }
