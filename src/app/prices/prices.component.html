@@ -3,7 +3,12 @@
         <div class="container pt-5 pb-5">
             <div class="row pt-md-3">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="text-center pb-4">
+                    <div class="text-center pb-4" *ngIf="lang === 'en'">
+                        <h1 class="first-caps pb-4">{{priceContent?.banner?.en[0]?.heading}}</h1>
+                        <p class="mb-0">{{priceContent?.banner?.en[0]?.subHeading}}</p>
+                        <p>{{priceContent?.banner?.en[0]?.description}}</p>
+                    </div>
+                    <div class="text-center pb-4" *ngIf="lang === 'de'">
                         <h1 class="first-caps pb-4">{{priceContent?.banner?.en[0]?.heading}}</h1>
                         <p class="mb-0">{{priceContent?.banner?.en[0]?.subHeading}}</p>
                         <p>{{priceContent?.banner?.en[0]?.description}}</p>
@@ -11,8 +16,23 @@
                 </div>
             </div>
     
-            <div class="row">
+            <div class="row" *ngIf="lang === 'en'">
                 <div class="col-md-4 mb-4 mb-md-0" *ngFor="let item of priceContent?.rateList?.en">
+                    <div class="price-card">
+                        <div class="price-head d-flex align-items-center mb-5">
+                            <span class="mr-3"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.icon[0]"></span>
+                            <h4 class="title mb-0">{{item.heading}}</h4>
+                        </div>
+    
+                        <div class="price-body text-center mb-5" [innerHtml]="item.rate">
+                           <!-- <h2 class="title"> <sup>&euro;</sup> 10 <sub>/page</sub></h2> -->
+                        </div>
+                        <div class="text-center"> <a routerLink="/inquire" class="btn btn-primary">{{priceContent?.inquireNowBtnTitle?.en}}</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="lang === 'de'">
+                <div class="col-md-4 mb-4 mb-md-0" *ngFor="let item of priceContent?.rateList?.de">
                     <div class="price-card">
                         <div class="price-head d-flex align-items-center mb-5">
                             <span class="mr-3"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.icon[0]"></span>

@@ -3,7 +3,8 @@ import { ContentService } from '../services/content.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import * as moment from 'moment';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { Router } from '@angular/router';
+import { TranslationService } from 'src/app/services/translation/translation.service';
+
 @Component({
   selector: 'app-inquire',
   templateUrl: './inquire.component.html',
@@ -15,14 +16,18 @@ export class InquireComponent implements OnInit {
   submitted = false;
   bsConfig: Partial<BsDatepickerConfig>;
   colorTheme = 'theme-dark-blue';
+  lang = 'en';
   formSuccess = false;
-  constructor(private fb: FormBuilder, private readonly contentsService: ContentService, private router: Router) { }
+  constructor(private fb: FormBuilder, private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
     this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
     this.contentsService.getPage('inquire').subscribe(res => {
       console.log(res);
       this.inquiryContent = res.data;
+    });
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
     });
     this.createForm();
   }
