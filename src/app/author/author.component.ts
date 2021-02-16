@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContentService } from '../services/content.service';
-
+import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-author',
@@ -12,10 +12,11 @@ export class AuthorComponent implements OnInit {
   authorForm: FormGroup;
   submitted = false;
   file;
-  authorContent: any ;
+  authorContent: any;
   formSuccess = false;
-
-  constructor(private readonly contentsService: ContentService, private formBuilder: FormBuilder){}
+  lang = 'en';
+  constructor(private readonly contentsService: ContentService,
+              private formBuilder: FormBuilder, public translation: TranslationService) { }
 
 
   ngOnInit(): void {
@@ -36,8 +37,10 @@ export class AuthorComponent implements OnInit {
       message: ['', Validators.required],
       document: ['', Validators.required],
       documentName: ['']
-   });
-
+    });
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
+    });
 
   }
 
@@ -60,56 +63,56 @@ export class AuthorComponent implements OnInit {
     }
   }
 
-    // tslint:disable-next-line:typedef
-    get f() { return this.authorForm.controls; }
+  // tslint:disable-next-line:typedef
+  get f() { return this.authorForm.controls; }
 
-    // tslint:disable-next-line:typedef
-    onSubmit(): void {
-      this.submitted = true;
-      // stop here if form is invalid
-      if (this.authorForm.invalid) {
-        return;
+  // tslint:disable-next-line:typedef
+  onSubmit(): void {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.authorForm.invalid) {
+      return;
+    }
+    const param = JSON.stringify(this.generateParam());
+    this.contentsService.sendRequest('authorform', param).subscribe(item => {
+      console.log(item);
+      this.formSuccess = true;
+    }, error => {
+      console.log(error);
+      this.formSuccess = false;
+    });
+  }
+
+  generateParam = () => {
+    return {
+      firstName: {
+        iv: this.authorForm.controls.firstName.value
+      },
+      lastName: {
+        iv: this.authorForm.controls.lastName.value
+      },
+      language: {
+        iv: this.authorForm.controls.language.value
+      },
+      phone: {
+        iv: this.authorForm.controls.phone.value
+      },
+      email: {
+        iv: this.authorForm.controls.email.value
+      },
+      title: {
+        iv: this.authorForm.controls.title.value
+      },
+      document: {
+        iv: this.authorForm.controls.document.value
+      },
+      message: {
+        iv: this.authorForm.controls.message.value
+      },
+      qualification: {
+        iv: this.authorForm.controls.qualification.value
       }
-      const param = JSON.stringify(this.generateParam());
-      this.contentsService.sendRequest('authorform', param).subscribe(item => {
-        console.log(item);
-        this.formSuccess = true;
-      }, error => {
-        console.log(error);
-        this.formSuccess = false;
-      });
-    }
-
-    generateParam = () => {
-      return {
-        firstName: {
-          iv: this.authorForm.controls.firstName.value
-        },
-        lastName: {
-          iv: this.authorForm.controls.lastName.value
-        },
-        language: {
-          iv: this.authorForm.controls.language.value
-        },
-        phone: {
-          iv: this.authorForm.controls.phone.value
-        },
-        email: {
-          iv: this.authorForm.controls.email.value
-        },
-        title: {
-          iv: this.authorForm.controls.title.value
-        },
-        document: {
-          iv: this.authorForm.controls.document.value
-        },
-        message: {
-          iv: this.authorForm.controls.message.value
-        },
-        qualification: {
-          iv: this.authorForm.controls.qualification.value
-        }
-      };
-    }
+    };
+  }
 
 }

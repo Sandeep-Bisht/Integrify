@@ -1,5 +1,8 @@
 <section class="container py-5">
-    <div [innerHtml]="conditionContent?.content?.en">
+    <div *ngIf="lang === 'en'" [innerHtml]="conditionContent?.content?.en">
+
+    </div>
+    <div *ngIf="lang === 'de'" [innerHtml]="conditionContent?.content?.de">
 
     </div>
 </section>

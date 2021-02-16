@@ -1,4 +1,6 @@
 <section class="container py-5">
-    <div class="pc-row" [innerHtml]="imprintContent?.content?.en" >
+    <div class="pc-row" *ngIf="lang === 'en'" [innerHtml]="imprintContent?.content?.en" >
+    </div>
+    <div class="pc-row" *ngIf="lang === 'en'" [innerHtml]="imprintContent?.content?.de" >
     </div>
 </section>

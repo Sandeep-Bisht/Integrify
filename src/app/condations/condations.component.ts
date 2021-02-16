@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 import { ContentService } from '../services/content.service';
 
 @Component({
@@ -8,11 +9,15 @@ import { ContentService } from '../services/content.service';
 })
 export class CondationsComponent implements OnInit {
   conditionContent: any;
-  constructor(private readonly contentsService: ContentService) { }
+  lang = 'en';
+  constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
     this.contentsService.getPage('termsandcondition').subscribe(res => {
       this.conditionContent = res.data;
+    });
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
     });
   }
 
