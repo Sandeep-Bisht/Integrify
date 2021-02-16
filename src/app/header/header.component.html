@@ -34,6 +34,12 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/inquire">Inquire now</a>
             </li>
+            <li class="nav-item" *ngIf="lang === 'en'">
+                <a (click)="setLang('de')" class="nav-link" type="button">EN</a>
+            </li>
+            <li class="nav-item" *ngIf="lang === 'de'">
+                <a (click)="setLang('en')" class="nav-link" type="button">DE</a>
+            </li>
         </ul>
         </div>
     </div>

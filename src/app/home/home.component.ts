@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../services/content.service';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,15 @@ import { ContentService } from '../services/content.service';
 })
 export class HomeComponent implements OnInit {
   homeContent: any ;
-  constructor(private readonly contentsService: ContentService) { }
+  lang = 'en';
+  constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
     this.contentsService.getPage('homepage').subscribe(res => {
       this.homeContent = res.data;
+    });
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
     });
   }
 }
