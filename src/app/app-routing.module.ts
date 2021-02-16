@@ -9,7 +9,6 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { CondationsComponent } from './condations/condations.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
-import { PlagiarismComponent } from './plagiarism/plagiarism.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ServiceComponent } from './service/service.component';
 

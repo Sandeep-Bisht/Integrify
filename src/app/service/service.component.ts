@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContentService } from '../services/content.service';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-service',
@@ -8,13 +9,17 @@ import { ContentService } from '../services/content.service';
   styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent implements OnInit {
+  lang = 'en';
   serviceList = [];
-  constructor(private readonly contentsService: ContentService, public router: Router) { }
+  constructor(private readonly contentsService: ContentService, public router: Router, public translation: TranslationService) { }
 
   ngOnInit(): void {
     this.router.navigate(['/service/plagiarism-check']);
     this.contentsService.getmultipleData('services').subscribe(res => {
       this.serviceList = res.posts;
+    });
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
     });
   }
 
