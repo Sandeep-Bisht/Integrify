@@ -13,11 +13,16 @@ export class CondationsComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.contentsService.getPage('termsandcondition').subscribe(res => {
-      this.conditionContent = res.data;
-    });
+    this.getConditions();
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getConditions();
+    });
+  }
+
+  getConditions = () => {
+    this.contentsService.getPage('termsandcondition').subscribe(res => {
+      this.conditionContent = res.data;
     });
   }
 

@@ -13,11 +13,16 @@ export class ImprintComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.contentsService.getPage('imprint').subscribe(res => {
-      this.imprintContent = res.data;
-    });
+    this.getImprintPage();
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getImprintPage();
+    });
+  }
+
+  getImprintPage = () => {
+    this.contentsService.getPage('imprint').subscribe(res => {
+      this.imprintContent = res.data;
     });
   }
 

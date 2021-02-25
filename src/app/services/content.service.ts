@@ -17,7 +17,15 @@ export class ContentService {
 
     public getPage(slug: string): Observable<any> {
         const url = this.config.buildUrl(`api/content/{app}/${slug}`);
-        return this.httpClient.get<any>(url)
+        let requestHeaders = new HttpHeaders();
+        requestHeaders = requestHeaders.set('X-Languages', localStorage.getItem('language'));
+        requestHeaders = requestHeaders.set(
+        'X-Flatten',
+        'true'
+        );
+        return this.httpClient.get<any>(url, {
+            headers: requestHeaders
+        })
             .pipe(map(payload => {
                 const { items } = payload;
                 if (items.length === 0) {
@@ -30,8 +38,15 @@ export class ContentService {
 
     public getmultipleData(slug): Observable<any> {
         const url = this.config.buildUrl(`api/content/{app}/${slug}`);
-
-        return this.httpClient.get<any>(url)
+        let requestHeaders = new HttpHeaders();
+        requestHeaders = requestHeaders.set('X-Languages', localStorage.getItem('language'));
+        requestHeaders = requestHeaders.set(
+        'X-Flatten',
+        'true'
+        );
+        return this.httpClient.get<any>(url, {
+            headers: requestHeaders
+        })
             .pipe(map(payload => {
                 const { total, items } = payload;
 
@@ -42,11 +57,18 @@ export class ContentService {
 
     public getDetailPage(slug, filterId): Observable<any> {
         const url = this.config.buildUrl(`api/content/{app}/${slug}`);
-
-        return this.httpClient.get<any>(url)
+        let requestHeaders = new HttpHeaders();
+        requestHeaders = requestHeaders.set('X-Languages', localStorage.getItem('language'));
+        requestHeaders = requestHeaders.set(
+        'X-Flatten',
+        'true'
+        );
+        return this.httpClient.get<any>(url, {
+            headers: requestHeaders
+        })
             .pipe(map(payload => {
                 const { total, items } = payload;
-                const data = items.find(x => x.data.slug.iv === filterId);
+                const data = items.find(x => x.data.slug === filterId);
                 return { total, posts: items, data};
             })
         );

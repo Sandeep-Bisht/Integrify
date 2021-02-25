@@ -13,11 +13,16 @@ export class HomeComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.contentsService.getPage('homepage').subscribe(res => {
-      this.homeContent = res.data;
-    });
+    this.getHomeContent();
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getHomeContent();
+    });
+  }
+
+  getHomeContent = () => {
+    this.contentsService.getPage('homepage').subscribe(res => {
+      this.homeContent = res.data;
     });
   }
 }

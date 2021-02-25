@@ -1,13 +1,9 @@
 <section class="container pt-5 pb-5" *ngIf="!formSuccess">
   <div class="row pt-md-3">
     <div class="col-md-8 offset-md-2">
-      <div class="text-center pb-4" *ngIf="lang === 'en'">
-        <h1 class="first-caps pb-4">{{ authorContent?.heading?.en }}</h1>
-        <p>{{ authorContent?.description?.en }}</p>
-      </div>
-      <div class="text-center pb-4" *ngIf="lang === 'de'">
-        <h1 class="first-caps pb-4">{{ authorContent?.heading?.de }}</h1>
-        <p>{{ authorContent?.description?.de }}</p>
+      <div class="text-center pb-4" >
+        <h1 class="first-caps pb-4">{{ authorContent?.heading }}</h1>
+        <p>{{ authorContent?.description }}</p>
       </div>
     </div>
   </div>
@@ -15,11 +11,8 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="bg-white shadow rounded px-4 py-5">
-        <h4 class="fontweight-bold mb-4" *ngIf="lang === 'en'">
-          {{ authorContent?.formHeading?.en }}
-        </h4>
-        <h4 class="fontweight-bold mb-4" *ngIf="lang === 'de'">
-          {{ authorContent?.formHeading?.de }}
+        <h4 class="fontweight-bold mb-4">
+          {{ authorContent?.formHeading }}
         </h4>
 
         <form

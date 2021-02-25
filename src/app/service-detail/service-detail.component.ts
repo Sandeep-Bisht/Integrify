@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContentService } from '../services/content.service';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-service-detail',
@@ -10,14 +11,17 @@ import { ContentService } from '../services/content.service';
 export class ServiceDetailComponent implements OnInit {
   url = '';
   serviceDetail: any;
-  constructor(public activateRoute: ActivatedRoute, private readonly contentsService: ContentService) { }
+  constructor(public activateRoute: ActivatedRoute, private readonly contentsService: ContentService,
+              public translation: TranslationService) { }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe(item => {
       if (item.id && item.id !== '') {
         this.url = item.id;
-        this.serviceDetailContent();
       }
+    });
+    this.translation.getLangValue().subscribe(res => {
+      this.serviceDetailContent();
     });
   }
 

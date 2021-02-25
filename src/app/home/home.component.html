@@ -4,35 +4,19 @@
           <div class="container plusicon">
             <div class="row">
               <div class="col-lg-6 align-self-center pb-lg-5">
-                <div class="banner-info" *ngIf="lang === 'en'">
+                <div class="banner-info" >
                   <h1 class="mb-4 fontweight-medium">
-                    {{ homeContent?.banner?.en[0].bannerHeading }}
+                    {{ homeContent?.banner[0].bannerHeading }}
                   </h1>
                   <h3 class="mb-4 text-primary">
-                    {{ homeContent?.banner?.en[0].bannerSubHeading }}
+                    {{ homeContent?.banner[0].bannerSubHeading }}
                   </h3>
                   <p class="mb-4">
-                    {{ homeContent?.banner?.en[0].bannerDescription }}
+                    {{ homeContent?.banner[0].bannerDescription }}
                   </p>
       
                   <a href="#" class="btn btn-primary"
-                    >{{ homeContent?.banner?.en[0].bannerBtnTitle }}
-                  </a
-                  >
-                </div>
-                <div class="banner-info" *ngIf="lang === 'de'">
-                  <h1 class="mb-4 fontweight-medium">
-                    {{ homeContent?.banner?.de[0].bannerHeading }}
-                  </h1>
-                  <h3 class="mb-4 text-primary">
-                    {{ homeContent?.banner?.de[0].bannerSubHeading }}
-                  </h3>
-                  <p class="mb-4">
-                    {{ homeContent?.banner?.de[0].bannerDescription }}
-                  </p>
-      
-                  <a href="#" class="btn btn-primary"
-                    >{{ homeContent?.banner?.de[0].bannerBtnTitle }}
+                    >{{ homeContent?.banner[0].bannerBtnTitle }}
                   </a
                   >
                 </div>
@@ -42,7 +26,7 @@
                   <img
                     src="{{
                       'https://squidex.it-blue.net/api/assets/medicrates/' +
-                        homeContent?.banner?.en[0].bannerImage[0]
+                        homeContent?.banner[0].bannerImage[0]
                     }}"
                     alt="academic ghostwriters"
                     class="img-fluid"
@@ -80,23 +64,10 @@
       </section> -->
       
       <section class="services-section mb-4">
-        <div class="container py-5" *ngIf="lang === 'en'"> 
-          <h2 class="text-center text-primary mb-4">{{homeContent?.ourServiceHeading.en}}</h2>
+        <div class="container py-5"> 
+          <h2 class="text-center text-primary mb-4">{{homeContent?.ourServiceHeading}}</h2>
           <div class="row pt-2">
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of homeContent?.services.en">
-              <div class="services-card px-3 pt-4 pb-3">
-              <span class="services-icon1"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Content Icon"></span>
-                <h6 class="mb-3">{{item.heading}}</h6>
-                <p>{{item.description}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container py-5" *ngIf="lang === 'de'"> 
-          <h2 class="text-center text-primary mb-4">{{homeContent?.ourServiceHeading.de}}</h2>
-          <div class="row pt-2">
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of homeContent?.services.de">
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of homeContent?.services">
               <div class="services-card px-3 pt-4 pb-3">
               <span class="services-icon1"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Content Icon"></span>
                 <h6 class="mb-3">{{item.heading}}</h6>
@@ -108,28 +79,9 @@
       </section>
 
       <section class="customer-section">
-        <div class="container" *ngIf="lang === 'en'">
-          <h2 class="text-center text-primary mb-4 pb-2">{{homeContent?.whyUs.en}}</h2>
-          <div class="row mb-5" *ngFor="let item of homeContent?.whyUsList.en; let i=index">
-            <div class="col-md-6" [ngClass]="{'order-md-2': i%2 === 0}">
-              <div class="customer-card-info pt-4">
-                <div class="title-row mb-4">{{item.heading}}</div>
-                <h2 class="mb-4">{{item.subHeading}}</h2>
-                <p>
-                  {{item.description}}
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="customer-card border-shape1">
-                <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Customer Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container" *ngIf="lang === 'de'">
-          <h2 class="text-center text-primary mb-4 pb-2">{{homeContent?.whyUs.de}}</h2>
-          <div class="row mb-5" *ngFor="let item of homeContent?.whyUsList.de; let i=index">
+        <div class="container" >
+          <h2 class="text-center text-primary mb-4 pb-2">{{homeContent?.whyUs}}</h2>
+          <div class="row mb-5" *ngFor="let item of homeContent?.whyUsList; let i=index">
             <div class="col-md-6" [ngClass]="{'order-md-2': i%2 === 0}">
               <div class="customer-card-info pt-4">
                 <div class="title-row mb-4">{{item.heading}}</div>
@@ -149,25 +101,14 @@
       </section>
       
       <section class="goals-section py-5 mb-5">
-        <div class="container" *ngIf="lang === 'de'">
+        <div class="container" >
           <div class="row">
             <div class="col-md-6 mb-4 mb-md-0">
-              <h2 class="text-white mb-4">{{homeContent?.fullThrotleContent.de[0].heading}}</h2>
-              <p class="text-white mb-0">{{homeContent?.fullThrotleContent.de[0].desc}}</p>
+              <h2 class="text-white mb-4">{{homeContent?.fullThrotleContent[0].heading}}</h2>
+              <p class="text-white mb-0">{{homeContent?.fullThrotleContent[0].desc}}</p>
             </div>
             <div class="col-md-6 text-center align-self-center">
-              <a routerLink="/inquire" class="btn des-btn des-white-btn">{{homeContent?.fullThrotleContent.de[0].btnTitle}}</a>
-            </div>
-          </div>
-        </div>
-        <div class="container" *ngIf="lang === 'en'">
-          <div class="row">
-            <div class="col-md-6 mb-4 mb-md-0">
-              <h2 class="text-white mb-4">{{homeContent?.fullThrotleContent.en[0].heading}}</h2>
-              <p class="text-white mb-0">{{homeContent?.fullThrotleContent.en[0].desc}}</p>
-            </div>
-            <div class="col-md-6 text-center align-self-center">
-              <a routerLink="/inquire" class="btn des-btn des-white-btn">{{homeContent?.fullThrotleContent.en[0].btnTitle}}</a>
+              <a routerLink="/inquire" class="btn des-btn des-white-btn">{{homeContent?.fullThrotleContent[0].btnTitle}}</a>
             </div>
           </div>
         </div>
@@ -175,25 +116,24 @@
 
       <section class="work-section pt-4 mb-5">
         <div class="container">
-          <h2 class="mb-5 pb-md-4 text-center pt-md-1"  *ngIf="lang === 'en'">{{homeContent?.howItWorksHeading.en}}</h2>
-          <h2 class="mb-5 pb-md-4 text-center pt-md-1"  *ngIf="lang === 'de'">{{homeContent?.howItWorksHeading.de}}</h2>
+          <h2 class="mb-5 pb-md-4 text-center pt-md-1" >{{homeContent?.howItWorksHeading}}</h2>
 
-          <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2"  *ngIf="lang === 'en'">
+          <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2" >
             <li>
               <small></small>
               <div>
-                 <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.en[0]?.firstParagraphImage[0]" alt="Inquiry" class="img-fluid">
+                 <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent[0]?.firstParagraphImage[0]" alt="Inquiry" class="img-fluid">
               </div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.firstParagraph">
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.firstParagraph">
               </div>
             </li>
             
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.secondParaLeftContent">
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.secondParaLeftContent">
                 <!-- <h5><span>Receive an offer</span></h5>
                 <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p> -->
               </div>
@@ -203,7 +143,7 @@
               <div class="work-info info-ahape-light">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.secondParaRightContent">
+                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent[0]?.secondParaRightContent">
                     </div>
                   </div>
                 </div>
@@ -213,11 +153,11 @@
             <li>
               <small></small>
 
-              <div><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.en[0]?.thirdParaLeftImage[0]" alt="Order" class="img-fluid"></div>
+              <div><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent[0]?.thirdParaLeftImage[0]" alt="Order" class="img-fluid"></div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.thirdParaRightContent">
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.thirdParaRightContent">
                 <!-- <h5><span>Place order</span></h5>
                 <p>Are you satisfied with the offer? Then give us the final go!</p> -->
               </div>
@@ -225,7 +165,7 @@
 
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.fourthParaleftContent">
+              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.fourthParaleftContent">
                 <!-- <h5><span>Final delivery</span></h5>
                 <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p> -->
               </div>
@@ -234,7 +174,7 @@
               <div class="work-info info-ahape-dark">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.en[0]?.fourthParaRightContent">
+                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent[0]?.fourthParaRightContent">
                       <!-- <span class="d-block">Hi, Bob,</span>
                       <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span> -->
                     </div>
@@ -243,110 +183,15 @@
               </div>
             </li>
           </ul>
-          <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2"  *ngIf="lang === 'de'">
-            <li>
-              <small></small>
-              <div>
-                 <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.de[0]?.firstParagraphImage[0]" alt="Inquiry" class="img-fluid">
-              </div>
-            </li>
-            <li>
-              <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.firstParagraph">
-              </div>
-            </li>
-            
-            <li>
-              <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.secondParaLeftContent">
-                <!-- <h5><span>Receive an offer</span></h5>
-                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p> -->
-              </div>
-            </li>
-            <li>
-              <small></small>
-              <div class="work-info info-ahape-light">
-                <div class="info-ahape1">
-                  <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.secondParaRightContent">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <small></small>
-
-              <div><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent?.de[0]?.thirdParaLeftImage[0]" alt="Order" class="img-fluid"></div>
-            </li>
-            <li>
-              <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.thirdParaRightContent">
-                <!-- <h5><span>Place order</span></h5>
-                <p>Are you satisfied with the offer? Then give us the final go!</p> -->
-              </div>
-            </li>
-
-            <li>
-              <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.fourthParaleftContent">
-                <!-- <h5><span>Final delivery</span></h5>
-                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p> -->
-              </div>
-            </li>
-            <li>
-              <div class="work-info info-ahape-dark">
-                <div class="info-ahape1">
-                  <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent?.de[0]?.fourthParaRightContent">
-                      <!-- <span class="d-block">Hi, Bob,</span>
-                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-         
         </div>
       </section>
 
     <section class="asked-section">
       <div class="container mb-5 pb-md-2 pt-md-5">
-        <h2 class="text-center pb-4" *ngIf="lang === 'en'">{{homeContent?.faqHeading.en}}</h2>
-        <h2 class="text-center pb-4" *ngIf="lang === 'de'">{{homeContent?.faqHeading.de}}</h2>
-        <div class="accordion indicator-plus-before round-indicator" id="accordionH" *ngIf="lang === 'en'">
+        <h2 class="text-center pb-4" >{{homeContent?.faqHeading}}</h2>
+        <div class="accordion indicator-plus-before round-indicator" id="accordionH" >
           <div class="card m-b-0 border-0">
-            <div class="mb-4" *ngFor="let item of homeContent?.faqContent.en; let i = index">
-              <div
-                class="card-header collapsed"
-                role="tab"
-                [id]="'heading'+i"
-                [attr.href]="'#collapse'+i"
-                data-toggle="collapse"
-                [data-parent]="'#accordion'+i"
-                aria-expanded="false"
-                [aria-controls]="'collapse'+i"
-              >
-                <a class="card-title">{{item.heading}}</a>
-              </div>
-              <div
-                class="collapse"
-                [id]="'collapse'+i"
-                role="tabpanel"
-                [aria-labelledby]="'heading'+i"
-              >
-                <div class="card-body">
-                  {{item.description}}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion indicator-plus-before round-indicator" id="accordionH" *ngIf="lang === 'de'">
-          <div class="card m-b-0 border-0">
-            <div class="mb-4" *ngFor="let item of homeContent?.faqContent.de; let i = index">
+            <div class="mb-4" *ngFor="let item of homeContent?.faqContent; let i = index">
               <div
                 class="card-header collapsed"
                 role="tab"

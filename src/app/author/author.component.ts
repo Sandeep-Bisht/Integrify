@@ -20,12 +20,7 @@ export class AuthorComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.contentsService.getPage('author').subscribe(res => {
-      console.log(res);
-      this.authorContent = res.data;
-    });
-
-
+    this.getAuthorPage();
     this.authorForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -40,8 +35,15 @@ export class AuthorComponent implements OnInit {
     });
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getAuthorPage();
     });
 
+  }
+
+  getAuthorPage =  () => {
+    this.contentsService.getPage('author').subscribe(res => {
+      this.authorContent = res.data;
+    });
   }
 
   deleteFile(): void {

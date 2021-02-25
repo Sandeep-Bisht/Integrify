@@ -22,14 +22,19 @@ export class InquireComponent implements OnInit {
 
   ngOnInit(): void {
     this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
+    this.getInquiryContent();
+    this.translation.getLangValue().subscribe(item => {
+      this.lang = item;
+      this.getInquiryContent();
+    });
+    this.createForm();
+  }
+
+  getInquiryContent = () => {
     this.contentsService.getPage('inquire').subscribe(res => {
       console.log(res);
       this.inquiryContent = res.data;
     });
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-    });
-    this.createForm();
   }
 
   createForm(): void {

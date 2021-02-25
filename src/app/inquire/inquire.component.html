@@ -1,13 +1,9 @@
 <div class="container pt-5 pb-5" *ngIf="!formSuccess">
   <div class="row pt-md-3 mb-5">
     <div class="col-md-8 offset-md-2">
-      <div class="text-center pb-4" *ngIf="lang === 'en'">
-        <h1 class="first-caps pb-4">{{ inquiryContent?.heading?.en }}</h1>
-        <p>{{ inquiryContent?.description?.en }}</p>
-      </div>
-      <div class="text-center pb-4" *ngIf="lang === 'de'">
-        <h1 class="first-caps pb-4">{{ inquiryContent?.heading?.de }}</h1>
-        <p>{{ inquiryContent?.description?.de }}</p>
+      <div class="text-center pb-4">
+        <h1 class="first-caps pb-4">{{ inquiryContent?.heading }}</h1>
+        <p>{{ inquiryContent?.description }}</p>
       </div>
 
       <div class="bg-white shadow rounded px-4 py-5">

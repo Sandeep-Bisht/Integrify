@@ -1,16 +1,16 @@
 
 <div class="mb-5">
-  <h2 class="mb-5">{{serviceDetail?.heading?.en}}</h2>
-  <div [innerHtml]="serviceDetail?.description?.en">
+  <h2 class="mb-5">{{serviceDetail?.heading}}</h2>
+  <div [innerHtml]="serviceDetail?.description">
 
   </div>
 </div>
 
 <section class="services-section mb-4">
   <div class="container py-4"> 
-    <h2 class="mb-4">{{serviceDetail?.promiseQualityHeading?.en}}</h2>
+    <h2 class="mb-4">{{serviceDetail?.promiseQualityHeading}}</h2>
     <div class="row pt-2">
-      <div class="col-md-4 mb-4 mb-md-0" *ngFor="let item of serviceDetail?.promiseQualityList?.en">
+      <div class="col-md-4 mb-4 mb-md-0" *ngFor="let item of serviceDetail?.promiseQualityList">
         <div class="services-card px-3 pt-4 pb-3">
         <span class="services-icon1"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item?.icon[0]" alt="Promis Quality Icon"></span>
           <h6 class="mb-3">{{item.heading}}</h6>

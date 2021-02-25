@@ -11,23 +11,23 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ServiceComponent } from './service/service.component';
-
+import {AuthguardGuard} from 'src/app/core/authguard.guard';
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, pathMatch : 'full'},
-  { path: 'prices', component: PricesComponent, pathMatch : 'full'},
-  { path: 'author', component: AuthorComponent, pathMatch : 'full'},
-  { path: 'inquire', component: InquireComponent, pathMatch : 'full'},
-  { path: 'imprint', component: ImprintComponent, pathMatch : 'full'},
-  { path: 'terms-condition', component: CondationsComponent, pathMatch : 'full'},
-  { path: 'privacy', component: PrivacyComponent, pathMatch : 'full'},
+  { path: '',   redirectTo: '/home', pathMatch: 'full', canActivate: [AuthguardGuard] },
+  { path: 'home', component: HomeComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'prices', component: PricesComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'author', component: AuthorComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'inquire', component: InquireComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'imprint', component: ImprintComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'terms-condition', component: CondationsComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
+  { path: 'privacy', component: PrivacyComponent, pathMatch : 'full', canActivate: [AuthguardGuard]},
   // { path: 'plagiarism', component: PlagiarismComponent, pathMatch : 'full'},
   { path: 'service', component: ServiceComponent,
     children: [
       {path: ':id', component: ServiceDetailComponent}
-    ]
+    ], canActivate: [AuthguardGuard]
   },
-  { path: 'thankyou', component: ThankyouComponent, pathMatch : 'full'}
+  { path: 'thankyou', component: ThankyouComponent, pathMatch : 'full', canActivate: [AuthguardGuard]}
 ];
 
 @NgModule({

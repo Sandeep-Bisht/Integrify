@@ -15,11 +15,15 @@ export class ServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.navigate(['/service/plagiarism-check']);
-    this.contentsService.getmultipleData('services').subscribe(res => {
-      this.serviceList = res.posts;
-    });
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getServiceList();
+    });
+  }
+
+  getServiceList = () => {
+    this.contentsService.getmultipleData('services').subscribe(res => {
+      this.serviceList = res.posts;
     });
   }
 

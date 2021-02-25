@@ -15,12 +15,16 @@ export class PricesComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.contentsService.getPage('price').subscribe(res => {
-      console.log(res);
-      this.priceContent = res.data;
-    });
+    this.getPriceContent();
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
+      this.getPriceContent();
+    });
+  }
+
+  getPriceContent = () => {
+    this.contentsService.getPage('price').subscribe(res => {
+      this.priceContent = res.data;
     });
   }
 
