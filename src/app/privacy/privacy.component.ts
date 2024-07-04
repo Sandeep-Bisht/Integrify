@@ -13,17 +13,17 @@ export class PrivacyComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.getPrivacyContent();
+    // this.getPrivacyContent();
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
-      this.getPrivacyContent();
+      // this.getPrivacyContent();
     });
   }
 
-  getPrivacyContent = () =>  {
-    this.contentsService.getPage('privacy').subscribe(res => {
-      this.privacyContent = res.data;
-    });
-  }
+  // getPrivacyContent = () =>  {
+  //   this.contentsService.getPage('privacy').subscribe(res => {
+  //     this.privacyContent = res.data;
+  //   });
+  // }
 
 }

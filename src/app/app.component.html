@@ -1,6 +1,7 @@
 
-<app-header *ngIf="authService.isSecretKeyValid()"></app-header>
+<!-- <app-header *ngIf="authService.isSecretKeyValid()"></app-header> -->
+<app-header></app-header>
 
 <router-outlet></router-outlet>
-
-<app-footer class="mt-auto" *ngIf="authService.isSecretKeyValid()"></app-footer>
+<app-footer class="mt-auto" ></app-footer>
+<!-- <app-footer class="mt-auto" *ngIf="authService.isSecretKeyValid()"></app-footer> -->

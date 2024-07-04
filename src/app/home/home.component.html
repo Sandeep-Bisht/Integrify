@@ -1,34 +1,39 @@
-<div>
+<div >
     <section class="banner pt-5 mb-5">
-        <div class="banner-inner">
+        <div class="banner-inner padding-20 ">
           <div class="container plusicon">
             <div class="row">
               <div class="col-lg-6 align-self-center pb-lg-5">
                 <div class="banner-info" >
                   <h1 class="mb-4 fontweight-medium">
-                    {{ homeContent?.banner[0].bannerHeading }}
+                   Integrify Business Service LLP
                   </h1>
                   <h3 class="mb-4 text-primary">
-                    {{ homeContent?.banner[0].bannerSubHeading }}
+                    Discreet. Reliable. Competently.
                   </h3>
                   <p class="mb-4">
-                    {{ homeContent?.banner[0].bannerDescription }}
+                    Our vision is to provide superior client-focused and cost-effective solutions along with a comprehensive portfolio of screening searches and verifications for our clientele.
                   </p>
       
                   <a href="#" class="btn btn-primary"
-                    >{{ homeContent?.banner[0].bannerBtnTitle }}
+                    >Inquire Now
                   </a
                   >
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="pl-md-5">
-                  <img
+                  <!-- <img
                     src="{{
                       'https://squidex.it-blue.net/api/assets/medicrates/' +
                         homeContent?.banner[0].bannerImage[0]
                     }}"
                     alt="academic ghostwriters"
+                    class="img-fluid"
+                  /> -->
+                  <img
+                    src="../../assets/images/integrify.jpg"
+                    alt="Integrify banner"
                     class="img-fluid"
                   />
                 </div>
@@ -65,13 +70,38 @@
       
       <section class="services-section mb-4">
         <div class="container py-5"> 
-          <h2 class="text-center text-primary mb-4">{{homeContent?.ourServiceHeading}}</h2>
+          <h2 class="text-center text-primary mb-4">Our Services</h2>
           <div class="row pt-2">
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" *ngFor="let item of homeContent?.services">
+            <div class="col-md-3 col-lg-3 mb-4 mb-lg-0">
               <div class="services-card px-3 pt-4 pb-3">
-              <span class="services-icon1"><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Content Icon"></span>
-                <h6 class="mb-3">{{item.heading}}</h6>
-                <p>{{item.description}}</p>
+              <span class="services-icon1"><img  src="../../assets/images/content.png" alt="Content Icon"></span>
+                <h6 class="mb-3">Global database</h6>
+                <p> Screening of an individual name & details through several database of government agencies like law enforcement, most wanted lists & other lists of regulatory bodies.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+              <span class="services-icon1"><img src="../../assets/images/prooofreading.png" alt="Content Icon"></span>
+                <h6 class="mb-3">Background checks</h6>
+                <p> The phrase background check is often synonymous with pre-employment screening. An employer may have prospective employees sign a consent form, allowing the employer to run a background check.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+              <span class="services-icon1"><img src="../../assets/images/skills.png" alt="Content Icon"></span>
+                <h6 class="mb-3">ID Verification</h6>
+                <p>Identity verification is an essential requirement in employment screening. It insures a person’s identity matches the one that is supposed to be. 
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mb-4 mb-lg-0">
+              <div class="services-card px-3 pt-4 pb-3">
+              <span class="services-icon1"><img src="../../assets/images/edit.png" alt="Content Icon"></span>
+                <h6 class="mb-3">Global database</h6>
+                <p>Screening of an individual name & details through several database of government agencies</p>
               </div>
             </div>
           </div>
@@ -80,20 +110,54 @@
 
       <section class="customer-section">
         <div class="container" >
-          <h2 class="text-center text-primary mb-4 pb-2">{{homeContent?.whyUs}}</h2>
-          <div class="row mb-5" *ngFor="let item of homeContent?.whyUsList; let i=index">
-            <div class="col-md-6" [ngClass]="{'order-md-2': i%2 === 0}">
+          <h2 class="text-center text-primary mb-4 pb-2">Why Us</h2>
+          <div class="row mb-5" >
+            <div class="col-md-6 order-md-2">
               <div class="customer-card-info pt-4">
-                <div class="title-row mb-4">{{item.heading}}</div>
-                <h2 class="mb-4">{{item.subHeading}}</h2>
+                <div class="title-row mb-4">Integrify Business Services LLP, one source provider of specialized verification.</div>
+                <h2 class="mb-4">Global database</h2>
                 <p>
-                  {{item.description}}
+                  The phrase background check is often synonymous with pre-employment screening. An employer may have prospective employees sign a consent form, allowing the employer to run a background check.
                 </p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="customer-card border-shape1">
-                <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+item.image[0]" alt="Customer Image" class="img-fluid">
+                <img src="../../assets/images/customer1.png" alt="Customer Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-5" >
+            <div class="col-md-6 ">
+              <div class="customer-card-info pt-4">
+                <div class="title-row mb-4">Integrify Business Services LLP enables organizations to pursue their business goals and objectives.</div>
+                <h2 class="mb-4">Background checks</h2>
+                <p>
+                  The phrase background check is often synonymous with pre-employment screening. An employer may have prospective employees sign a consent form, allowing the employer to run a background check.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="customer-card border-shape1">
+                <img src="../../assets/images/customer2.png" alt="Customer Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-5" >
+            <div class="col-md-6 order-md-2" >
+              <div class="customer-card-info pt-4">
+                <div class="title-row mb-4">Our vision is to provide superior client-focused and cost-effective solutions along with a comprehensive portfolio.</div>
+                <h2 class="mb-4">ID Verification</h2>
+                <p>
+                  Identity verification is an essential requirement in employment screening. It insures a person’s identity matches the one that is supposed to be. 
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="customer-card border-shape1">
+                <img src="../../assets/images/customer3.png" alt="Customer Image" class="img-fluid">
               </div>
             </div>
           </div>
@@ -104,11 +168,11 @@
         <div class="container" >
           <div class="row">
             <div class="col-md-6 mb-4 mb-md-0">
-              <h2 class="text-white mb-4">{{homeContent?.fullThrotleContent[0].heading}}</h2>
-              <p class="text-white mb-0">{{homeContent?.fullThrotleContent[0].desc}}</p>
+              <h2 class="text-white mb-4">This is Heading</h2>
+              <p class="text-white mb-0">This is description</p>
             </div>
             <div class="col-md-6 text-center align-self-center">
-              <a routerLink="/inquire" class="btn des-btn des-white-btn">{{homeContent?.fullThrotleContent[0].btnTitle}}</a>
+              <a routerLink="/inquire" class="btn des-btn des-white-btn">Inquire Now</a>
             </div>
           </div>
         </div>
@@ -116,26 +180,29 @@
 
       <section class="work-section pt-4 mb-5">
         <div class="container">
-          <h2 class="mb-5 pb-md-4 text-center pt-md-1" >{{homeContent?.howItWorksHeading}}</h2>
+          <h2 class="mb-5 pb-md-4 text-center pt-md-1" >How It Works Heading</h2>
 
           <ul class="workrow d-flex flex-wrap list-unstyled pt-md-2" >
             <li>
               <small></small>
               <div>
-                 <img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent[0]?.firstParagraphImage[0]" alt="Inquiry" class="img-fluid">
+                 <img 
+                src="../../assets/images/Mask Group 30@2x.png" 
+                 alt="Inquiry" class="img-fluid">
               </div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.firstParagraph">
+              <div class="work-item-info" 
+              [innerHtml]="homeContent?.howItWorksContent[0]?.firstParagraph">
               </div>
             </li>
             
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.secondParaLeftContent">
-                <!-- <h5><span>Receive an offer</span></h5>
-                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p> -->
+              <div class="work-item-info">
+                <h5><span>Receive an offer</span></h5>
+                <p>As soon as we have received your request, you will receive our offer by email within a few hours.</p>
               </div>
             </li>
             <li>
@@ -143,7 +210,11 @@
               <div class="work-info info-ahape-light">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent[0]?.secondParaRightContent">
+                    <div class="info-ahape3" 
+                    >
+                    <span class="d-block">Hi, Bob,</span>
+                    <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span>
+                  
                     </div>
                   </div>
                 </div>
@@ -153,30 +224,34 @@
             <li>
               <small></small>
 
-              <div><img [src]="'https://squidex.it-blue.net/api/assets/medicrates/'+homeContent?.howItWorksContent[0]?.thirdParaLeftImage[0]" alt="Order" class="img-fluid"></div>
+              <div>
+                <img 
+                src="../../assets/images/order.svg" 
+                alt="Order" class="img-fluid"></div>
             </li>
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.thirdParaRightContent">
-                <!-- <h5><span>Place order</span></h5>
-                <p>Are you satisfied with the offer? Then give us the final go!</p> -->
+              <div class="work-item-info">
+                <h5><span>Place order</span></h5>
+                <p>Are you satisfied with the offer? Then give us the final go!</p>
               </div>
             </li>
 
             <li>
               <small></small>
-              <div class="work-item-info" [innerHtml]="homeContent?.howItWorksContent[0]?.fourthParaleftContent">
-                <!-- <h5><span>Final delivery</span></h5>
-                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p> -->
+              <div class="work-item-info">
+                <h5><span>Final delivery</span></h5>
+                <p>Get your finished work at the agreed time. This also includes express deliveries within 24 hours!</p>
               </div>
             </li>
             <li>
               <div class="work-info info-ahape-dark">
                 <div class="info-ahape1">
                   <div class="info-ahape2">
-                    <div class="info-ahape3" [innerHtml]="homeContent?.howItWorksContent[0]?.fourthParaRightContent">
-                      <!-- <span class="d-block">Hi, Bob,</span>
-                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span> -->
+                    <div class="info-ahape3" 
+                    >
+                      <span class="d-block">Hi, Bob,</span>
+                      <span class="d-block">We have emailed you the contect you requestd. Please review and let us know if this is fine.</span>
                     </div>
                   </div>
                 </div>
@@ -188,7 +263,7 @@
 
     <section class="asked-section">
       <div class="container mb-5 pb-md-2 pt-md-5">
-        <h2 class="text-center pb-4" >{{homeContent?.faqHeading}}</h2>
+        <h2 class="text-center pb-4" >Faq Heading</h2>
         <div class="accordion indicator-plus-before round-indicator" id="accordionH" >
           <div class="card m-b-0 border-0">
             <div class="mb-4" *ngFor="let item of homeContent?.faqContent; let i = index">
@@ -202,7 +277,7 @@
                 aria-expanded="false"
                 [aria-controls]="'collapse'+i"
               >
-                <a class="card-title">{{item.heading}}</a>
+                <a class="card-title">Item Heading</a>
               </div>
               <div
                 class="collapse"
@@ -211,7 +286,7 @@
                 [aria-labelledby]="'heading'+i"
               >
                 <div class="card-body">
-                  {{item.description}}
+                  Item description
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ export class ServiceComponent implements OnInit {
   constructor(private readonly contentsService: ContentService, public router: Router, public translation: TranslationService) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/service/plagiarism-check']);
+    this.router.navigate(['/service/global-database']);
     this.translation.getLangValue().subscribe(item => {
       this.lang = item;
       this.getServiceList();
@@ -28,14 +28,14 @@ export class ServiceComponent implements OnInit {
   }
 
   public getName = () => {
-    if (this.router.url === '/service/translation-of-service') {
-      return 'Translation Of Service';
+    if (this.router.url === '/service/id-verification') {
+      return 'Id Verification';
     }
-    if (this.router.url === '/service/plagiarism-check') {
-      return 'Plagiarism Check';
+    if (this.router.url === '/service/global-database') {
+      return 'Global Database';
     }
-    if (this.router.url === '/service/proofreading-of-service') {
-      return 'Proofreading of Service';
+    if (this.router.url === '/service/background-checks') {
+      return 'Background Checks';
     }
     if (this.router.url === '/service/editing-of-service') {
       return 'Editing Of Service';

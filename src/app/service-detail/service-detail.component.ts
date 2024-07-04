@@ -21,7 +21,7 @@ export class ServiceDetailComponent implements OnInit {
       }
     });
     this.translation.getLangValue().subscribe(res => {
-      this.serviceDetailContent();
+      // this.serviceDetailContent();
     });
   }
 
