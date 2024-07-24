@@ -20,11 +20,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Config, DefaultConfig } from 'src/app/services/config';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 import { PreloaderComponent } from './preloader/preloader.component';
-import { ngfModule } from 'angular-file';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ServiceComponent } from './service/service.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { HeaderComponent } from './header/header.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -50,8 +52,9 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    ngfModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    IvyCarouselModule,
+    CarouselModule
   ],
   providers: [
     { provide: Config, useValue: DefaultConfig },

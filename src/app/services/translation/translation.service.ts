@@ -11,27 +11,8 @@ export class TranslationService {
 
   // languageValue = this.language.asObservable();
   constructor() {
-    if (window.location.origin === 'https://medicrates.de') {
-      if (localStorage.getItem('language') !== null) {
-        this.setValue(localStorage.getItem('language'));
-      } else {
-        this.setValue('de');
-      }
-    } else {
-      if (localStorage.getItem('language') !== null) {
-        this.setValue(localStorage.getItem('language'));
-      } else {
-        this.setValue('en');
-      }
-    }
+    console.log("inisde translation file")
   }
 
-  setValue = (data) => {
-    localStorage.setItem('language', data);
-    this.language.next(data);
-  }
 
-  getLangValue = () => {
-    return this.language;
-  }
 }

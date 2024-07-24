@@ -14,10 +14,7 @@ export class CondationsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getConditions();
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-      // this.getConditions();
-    });
+    
   }
 
   // getConditions = () => {

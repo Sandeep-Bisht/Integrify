@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ContentService } from '../services/content.service';
-import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-service',
@@ -11,35 +9,72 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 export class ServiceComponent implements OnInit {
   lang = 'en';
   serviceList = [];
-  constructor(private readonly contentsService: ContentService, public router: Router, public translation: TranslationService) { }
+  serviceName='';
+  constructor( 
+    public router: Router, ) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/service/global-database']);
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-      this.getServiceList();
-    });
+    // this.router.navigate(['/service/address-verification']);
+   
+  
+
+
   }
 
-  getServiceList = () => {
-    this.contentsService.getmultipleData('services').subscribe(res => {
-      this.serviceList = res.posts;
-    });
-  }
+  // getServiceList = () => {
+  //   this.contentsService.getmultipleData('services').subscribe(res => {
+  //     this.serviceList = res.posts;
+  //   });
+  // }
 
   public getName = () => {
+    if (this.router.url === '/service/address-verification') {
+      this.serviceName = 'Address Verification';
+      return 'Address Verification';
+    }
+    if (this.router.url === '/service/bankruptcy-verification') {
+      this.serviceName = 'Address Verification';
+      return 'Bankruptcy Verification';
+    }
+    if (this.router.url === '/service/credit-verification') {
+      this.serviceName = 'Credit Verification';
+      return 'Credit Verification';
+    }
+    if (this.router.url === '/service/civil-verification') {
+      this.serviceName = 'Civil Verification';
+      return 'Civil Verification';
+    }
+    if (this.router.url === '/service/criminal-verification') {
+      this.serviceName = 'Criminal Verification';
+      return 'Criminal Verification';
+    }
+
+    if (this.router.url === '/service/court-records') {
+      this.serviceName = 'Court Verification';
+      return 'Court Records';
+    }
+    if (this.router.url === '/service/directorship-verification') {
+      this.serviceName = 'Directorship Verification';
+      return 'Directorship Verification';
+    }
+    if (this.router.url === '/service/education-verification') {
+      this.serviceName = 'Education Verification';
+      return 'Education Verification';
+    }
+    if (this.router.url === '/service/employment-verification') {
+      this.serviceName = 'Employment Verification';
+      return 'Employment Verification';
+    }
     if (this.router.url === '/service/id-verification') {
+      this.serviceName = 'Id Verification';
       return 'Id Verification';
     }
-    if (this.router.url === '/service/global-database') {
-      return 'Global Database';
+
+    if (this.router.url === '/service/reference-verification') {
+      this.serviceName = 'Reference Verification';
+      return 'Reference Verification';
     }
-    if (this.router.url === '/service/background-checks') {
-      return 'Background Checks';
-    }
-    if (this.router.url === '/service/editing-of-service') {
-      return 'Editing Of Service';
-    }
+  
   }
 
 }
