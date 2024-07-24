@@ -15,8 +15,8 @@ import {AuthguardGuard} from 'src/app/core/authguard.guard';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full',  },
   { path: 'home', component: HomeComponent, pathMatch : 'full', },
-  { path: 'prices', component: PricesComponent, pathMatch : 'full', },
-  { path: 'author', component: AuthorComponent, pathMatch : 'full', },
+  { path: 'about-us', component: PricesComponent, pathMatch : 'full', },
+  { path: 'contact-us', component: AuthorComponent, pathMatch : 'full', },
   { path: 'inquire', component: InquireComponent, pathMatch : 'full', },
   { path: 'imprint', component: ImprintComponent, pathMatch : 'full', },
   { path: 'terms-condition', component: CondationsComponent, pathMatch : 'full', },

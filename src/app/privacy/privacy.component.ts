@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../services/content.service';
-import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-privacy',
@@ -10,14 +8,11 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 export class PrivacyComponent implements OnInit {
   lang = 'en';
   privacyContent: any;
-  constructor(private readonly contentsService: ContentService, public translation: TranslationService) { }
+  constructor() { }
 
   ngOnInit(): void {
     // this.getPrivacyContent();
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-      // this.getPrivacyContent();
-    });
+  
   }
 
   // getPrivacyContent = () =>  {

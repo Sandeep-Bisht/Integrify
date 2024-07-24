@@ -1,76 +1,46 @@
 <section class="container pt-5 pb-5" *ngIf="!formSuccess">
   <div class="row pt-md-3">
     <div class="col-md-8 offset-md-2">
-      <div class="text-center pb-4" >
-        <h1 class="first-caps pb-4">{{ authorContent?.heading }}</h1>
-        <p>{{ authorContent?.description }}</p>
+      <div class="text-center pb-4">
+        <h1 class="first-caps pb-4">authorContent heading</h1>
+        <p>description</p>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-6">
       <div class="bg-white shadow rounded px-4 py-5">
-        <h4 class="fontweight-bold mb-4">
-          {{ authorContent?.formHeading }}
-        </h4>
-
-        <form
-          class="customeform-section"
-          [formGroup]="authorForm"
-          (ngSubmit)="onSubmit()"
-        >
+       <form class="customeform-section" [formGroup]="authorForm" (ngSubmit)="onSubmit()">
           <div class="form-row">
-            <div class="form-group col-md-2">
-                <select
-                  formControlName="title"
-                  class="form-control form-control-lg"
-                  [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
-                >
-                  <option value="" selected hidden>Title</option>
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
-                  <option value="Ms">Ms</option>
-                </select>
-                <div
-                  *ngIf="submitted && f.title.errors"
-                  class="invalid-feedback"
-                >
-                  <div *ngIf="f.title.errors.required">
-                    Title is required
-                  </div>
+            <!-- <div class="form-group col-md-2">
+              <select formControlName="title" class="form-control form-control-lg"
+                [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                <option value="" selected hidden>Title</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+              </select>
+              <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">
+                  Title is required
                 </div>
               </div>
-            <div class="form-group col-md-5">
-              <input
-                type="text"
-                placeholder="First name"
-                formControlName="firstName"
-                class="form-control form-control-lg"
-                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
-              />
-              <div
-                *ngIf="submitted && f.firstName.errors"
-                class="invalid-feedback"
-              >
+            </div> -->
+            <div class="form-group col-md-6">
+              <input type="text" placeholder="First name" formControlName="firstName"
+                class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">
                   First Name is required
                 </div>
               </div>
             </div>
-            <div class="form-group col-md-5">
-              <input
-                type="text"
-                placeholder="Last name"
-                formControlName="lastName"
-                class="form-control form-control-lg"
-                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
-              />
-              <div
-                *ngIf="submitted && f.lastName.errors"
-                class="invalid-feedback"
-              >
+            <div class="form-group col-md-6">
+              <input type="text" placeholder="Last name" formControlName="lastName" class="form-control form-control-lg"
+                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">
                   Last Name is required
                 </div>
@@ -79,13 +49,8 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <input
-                type="text"
-                placeholder="Email"
-                formControlName="email"
-                class="form-control form-control-lg"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-              />
+              <input type="text" placeholder="Email" formControlName="email" class="form-control form-control-lg"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
                 <div *ngIf="f.email.errors.email">
@@ -94,112 +59,18 @@
               </div>
             </div>
             <div class="form-group col-md-6">
-              <input
-                type="text"
-                placeholder="Phone"
-                formControlName="phone"
-                class="form-control form-control-lg"
-                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
-              />
+              <input type="text" placeholder="Phone" formControlName="phone" class="form-control form-control-lg"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
               <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                 <div *ngIf="f.phone.errors.required">Phone is required</div>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-                <select
-                  formControlName="qualification"
-                  class="form-control form-control-lg"
-                  [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"
-                >
-                  <option value="" selected hidden>Qualification</option>
-                  <option value="Student">Student</option>
-                  <option value="Bachelor">Bachelor</option>
-                  <option value="Master">Master</option>
-                  <option value="Diploma">Diploma</option>
-                  <option value="Magister">Magister</option>
-                  <option value="Promotion">Promotion</option>
-                  <option value="Andere">Andere</option>
-                </select>
-                <div
-                  *ngIf="submitted && f.qualification.errors"
-                  class="invalid-feedback"
-                >
-                  <div *ngIf="f.qualification.errors.required">
-                    Qualification is required
-                  </div>
-                </div>
-              </div>
-            <div class="form-group col-md-6">
-              <select
-                formControlName="language"
-                class="form-control form-control-lg"
-                [ngClass]="{ 'is-invalid': submitted && f.language.errors }"
-              >
-                <option value="" selected hidden>Preferred Language</option>
-                <option value="en">En</option>
-                <option value="de">De</option>
-              </select>
-              <div
-                *ngIf="submitted && f.language.errors"
-                class="invalid-feedback"
-              >
-                <div *ngIf="f.language.errors.required">
-                  Language is required
-                </div>
-              </div>
-            </div>
-          </div>
 
-          
 
           <div class="form-group">
-            <button
-              type="button"
-              class="btn btn-primary"
-              (click)="fileInput.click()"
-            >
-              Upload File
-            </button>
-            <a type="button" *ngIf="authorForm.value.documentName"
-              >{{ authorForm.value.documentName }}
-              <span
-                (click)="deleteFile()"
-                class="text-danger"
-                style="
-                  font-size: 30px;
-                  vertical-align: sub;
-                  line-height: 1;
-                  cursor: pointer;
-                "
-                >&times;</span
-              ></a
-            >
-            <div
-              *ngIf="submitted && f.document.errors"
-              class="text-danger"
-              style="position: absolute; bottom: -20px; font-size: 12px"
-            >
-              <div *ngIf="f.document.errors.required">Document is required</div>
-            </div>
-            <input
-              (change)="onImageUpload($event)"
-              name="certificate"
-              #fileInput
-              class="form-control d-none"
-              type="file"
-            />
-          </div>
-
-          <div class="form-group">
-            <textarea
-              placeholder="Message"
-              rows="4"
-              formControlName="message"
-              class="form-control form-control-lg"
-              [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
-            ></textarea>
+            <textarea placeholder="Message" rows="4" formControlName="message" class="form-control form-control-lg"
+              [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
             <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
               <div *ngIf="f.message.errors.required">Message is required</div>
             </div>
@@ -209,6 +80,10 @@
           </div>
         </form>
       </div>
+    </div>
+
+    <div class="col-md-6">
+      Somethings
     </div>
   </div>
 </section>

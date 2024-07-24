@@ -13,6 +13,9 @@ $extraSmall:575px;
 @import "./assets/style/button.scss";
 @import "./assets/style/form.scss";
 
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 
 body{
     font-family: 'Open Sans', sans-serif;
@@ -32,7 +35,7 @@ a{
 
 
 .padding-20 {
-    padding-top: 50px;
+    padding-top: 150px;
 }
 
 .list-type-num{

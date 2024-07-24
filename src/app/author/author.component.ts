@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ContentService } from '../services/content.service';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
@@ -11,12 +10,12 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 export class AuthorComponent implements OnInit {
   authorForm: FormGroup;
   submitted = false;
-  file;
   authorContent: any;
   formSuccess = false;
   lang = 'en';
-  constructor(private readonly contentsService: ContentService,
-              private formBuilder: FormBuilder, public translation: TranslationService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    public translation: TranslationService) { }
 
 
   ngOnInit(): void {
@@ -26,17 +25,9 @@ export class AuthorComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
-      title: ['', Validators.required],
-      language: ['', Validators.required],
-      qualification: ['', Validators.required],
       message: ['', Validators.required],
-      document: ['', Validators.required],
-      documentName: ['']
     });
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-      // this.getAuthorPage();
-    });
+
 
   }
 

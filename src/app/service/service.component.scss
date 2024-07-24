@@ -148,3 +148,17 @@ $extraSmall:575px;
 .goals-section{
     background: var(--blue-2);
 }
+
+.common-para {
+    font-weight: 400;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-family: Lato, sans-serif;
+    letter-spacing: .35px;
+}
+
+.text-justify {
+    text-align: justify !important;
+}

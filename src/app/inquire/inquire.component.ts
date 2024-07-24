@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../services/content.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import * as moment from 'moment';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-inquire',
@@ -18,15 +16,13 @@ export class InquireComponent implements OnInit {
   colorTheme = 'theme-dark-blue';
   lang = 'en';
   formSuccess = false;
-  constructor(private fb: FormBuilder, private readonly contentsService: ContentService, public translation: TranslationService) { }
+  constructor(
+    private fb: FormBuilder,) { }
 
   ngOnInit(): void {
     this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
     // this.getInquiryContent();
-    this.translation.getLangValue().subscribe(item => {
-      this.lang = item;
-      // this.getInquiryContent();
-    });
+  
     // this.createForm();
   }
 
@@ -59,14 +55,7 @@ export class InquireComponent implements OnInit {
     if (this.inquireForm.invalid) {
       return;
     }
-    const param = JSON.stringify(this.generateParam());
-    this.contentsService.sendRequest('inquiryform', param).subscribe(item => {
-      console.log(item);
-      this.formSuccess = true;
-    }, error => {
-      console.log(error);
-      this.formSuccess = false;
-    });
+    console.log("check form")
   }
 
   generateParam = () => {
